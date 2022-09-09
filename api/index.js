@@ -5,7 +5,10 @@ import multer from "multer";
 import path from 'path';
 import authRouteDev from "./routes/authDev.js";
 import authRouteUser from "./routes/authUser.js";
-import userRoute from "./routes/users.js"
+import userRoute from "./routes/users.js";
+import devRoute from "./routes/devs.js";
+import questionRoute from "./routes/questions.js";
+import answerRoute from "./routes/answers.js"
 import { fileURLToPath } from "url";
 
 const app = express()
@@ -13,7 +16,7 @@ dotenv.config()
 
 const connect = async () => {
     try {
-        // await mongoose.connect("mongodb+srv://marwen:marwen@job-app.cwu2kuz.mongodb.net/job-app")
+      
         await mongoose.connect(process.env.MONGO)
         console.log("connected to mongoDB")
         
@@ -25,9 +28,12 @@ const connect = async () => {
 
 
 app.use(express.json());
-app.use("/api/auth/",authRouteDev );
-app.use("/api/auth/",authRouteUser );
+app.use("/api/auth",authRouteDev );
+app.use("/api/auth",authRouteUser );
 app.use("/api/user", userRoute);
+app.use("/api/dev", devRoute);
+app.use("/api/question", questionRoute)
+app.use("/api/answers", answerRoute)
 
 
 

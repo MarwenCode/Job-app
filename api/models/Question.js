@@ -2,15 +2,14 @@ import mongoose from "mongoose";
 
 const QuestionSchema = new mongoose.Schema({
 
-    QuestionId: {
-        type: mongoose.Schema.Types.ObjectId,
-      },
+  userId: {
+    type: String,
+    required: true,
+  },
       username: {
         type: String,
       },
-      userId: {
-        type: String,
-      },
+     
       text: {
         type: String,
       },
@@ -21,5 +20,12 @@ const QuestionSchema = new mongoose.Schema({
 
 
 );
+
+QuestionSchema.virtual("answers", {
+  ref: "Answer",
+  localField: "_id",
+  foreignField: "QuestionId",
+  justOne: false
+});
 
 export default mongoose.model("Question", QuestionSchema)
