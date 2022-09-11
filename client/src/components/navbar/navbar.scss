@@ -1,0 +1,50 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 60px;
+  
+
+    .title{
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    .logout{
+        padding: 10px 20px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        background: #000;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        text-align: center;
+        appearance: button;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .signoutIcon{
+            margin-left: 10px;
+        }
+    }
+    .item {
+        list-style: none;
+        display: flex;
+       
+
+        li{
+            margin-left: 20px;
+
+        }
+
+       
+    
+       
+    }
+   
+
+
+}

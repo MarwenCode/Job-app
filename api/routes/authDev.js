@@ -16,6 +16,9 @@ authRouteDev.post("/register/dev", async (req, res) => {
       username: req.body.username,
       email: req.body.email,
       password: hashedPassword,
+      description:req.body.description,
+      technologie:req.body.technologie,
+      cost:req.body.cost
     });
     const devUser = await newDevUser.save();
     res.status(200).json(devUser);

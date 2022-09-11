@@ -1,0 +1,34 @@
+.dev{
+    width: 100%;
+    margin: 0px 100px 60px 25px;
+    display: flex;
+    // flex-direction: column;
+    float: right;
+    border : 1px solid rgb(182, 164, 164);
+    // margin: 40px 40px;
+    padding: 10px 10px;
+    justify-items: center;
+    align-items: center;
+   
+
+    .right{
+
+
+        .img{
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 7px;
+        }
+    }
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        margin: 0px 60px;
+      
+       
+    }
+    
+
+}

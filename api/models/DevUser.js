@@ -26,16 +26,15 @@ const DevUserSchema = new mongoose.Schema(
     },
     description: {
       type: String,
-      default: "",
+      max: 50,
     },
-    technologie: {
+    technology: {
       type: String,
-      default: "",
     },
 
     cost: {
       type: String,
-      default: "",
+     
     },
   },
   { timestamps: true }
