@@ -13,10 +13,20 @@ const Navbar = () => {
         <Link to='/'  className="link">Job App</Link>
     </div>
     {user ? (
-        <button className='logout'>Logout
+        <>
+        <Link to="/forum" className='link'>
+        <button className='forum'>Forum</button>
+        
+        </Link>
+
+         
+         <button className='logout'>Logout
         <FaSignOutAlt className='signoutIcon'/>
 
         </button>
+        
+        </>
+       
 
 
 
@@ -44,6 +54,11 @@ const Navbar = () => {
 
 
     }
+
+    {/* {user &&    <button className='logout'>test
+        <FaSignOutAlt className='signoutIcon'/>
+
+        </button>} */}
 
 
 </div>

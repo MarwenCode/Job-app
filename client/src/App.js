@@ -5,6 +5,8 @@ import Register from "./pages/register/Register";
 import { useContext } from "react";
 import { AppContext } from "./context/context";
 import Login from "./pages/login/Login";
+import Profile from "./components/profile/Profile";
+import Review from "./components/review/Review";
 import "./app.scss"
 
 function App() {
@@ -15,8 +17,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/register" element={user ? <Login/> : <Register />} />
+        <Route path="/register" element={ <Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/dev/:id" element={<Profile />} />
+        <Route path="/review/:id" element={<Review />} />
       </Routes>
     </div>
   

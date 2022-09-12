@@ -26,6 +26,7 @@ const Register = () => {
             username,
             email,
             password,
+            confirmPassword
           });
           localStorage.setItem("user", JSON.stringify(res))
           console.log(res)
@@ -93,16 +94,14 @@ const Register = () => {
             <div className="form-group">
                 <input type='password' 
                        className="form-control"
-                       id='password2'
-                       name='password2'
-                    //    value={password2}
-                    //    onChange={onChange}
+                       id='confirmPassword'
+                       name='confirmPassword'
                        placeholder='Confirm  password'
                        onChange={(e) => setConfirmPassword(e.target.value)}
                 />
             </div>
             <div className="form-group">
-                <button className="btn btn-block">Submit</button>
+                <button className="btn">Submit</button>
             </div>
 
         </form>

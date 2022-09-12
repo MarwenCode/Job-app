@@ -3,6 +3,7 @@ import axios from "axios";
 import reducer from "./reducer";
 
 
+
 export const AppContext = React.createContext()
 
 const initialState = {
@@ -16,6 +17,9 @@ const initialState = {
 export const AppProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const [devs, setDevs] = useState([])
+
+
+ 
 
 
     useEffect(() => {
@@ -37,6 +41,10 @@ export const AppProvider = ({children}) => {
    
 
     console.log(devs)
+
+
+
+
 
 
 

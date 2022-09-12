@@ -43,9 +43,9 @@ const Login = () => {
     <div className='register'  onSubmit={handleLogin}>
     <section className="heading">
         <h1>
-            <FaUser/> Register
+            <FaUser/> Login
         </h1>
-        <p>Please create an account</p>
+    
 
     </section>
 

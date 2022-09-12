@@ -37,7 +37,16 @@ const DevUserSchema = new mongoose.Schema(
      
     },
   },
-  { timestamps: true }
+  { timestamps: true,
+    toJSON: { getters: true, virtuals: true },
+    toObject: { virtuals: true } },
 );
+
+DevUserSchema.virtual("review", {
+  ref: "Review",
+  localField: "_id",
+  foreignField: "DevUserId",
+  justOne: false
+});
 
 export default mongoose.model("DevUser", DevUserSchema);

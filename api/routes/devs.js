@@ -38,7 +38,7 @@ devRoute.get("/:id", async (req, res) => {
 
   devRoute.get("/", async (req, res) => {
     try {
-      const users = await DevUser.find();
+      const users = await DevUser.find().populate("review").exec();
       res.status(200).json(users);
     } catch (error) {
       res.status(500).json(error);
