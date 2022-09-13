@@ -3,12 +3,16 @@ import axios from "axios";
 import { Link, useLocation } from "react-router-dom";
 import Rating from "../rating/Rating";
 import {FaStar} from "react-icons/fa";
+import Reviews from "../reviews/Reviews";
+import Review from "../review/Review";
 import "./profile.scss"
 import { AppContext } from "../../context/context";
 
 const Profile = () => {
   const {user} = useContext(AppContext)
-  const [review, setReview] = useState({});
+  const [reviews, setReviews] = useState([]);
+  console.log(user)
+
 
   const[dev, setDev] = useState({})
   const location = useLocation();
@@ -19,8 +23,10 @@ const Profile = () => {
   useEffect(() => {
     const getDev = async () => {
       const res = await axios.get("/dev/" + path);
+      // const res = await axios.get(`/review/${user._id}`);
       console.log(res.data);
       setDev(res.data);
+      setReviews(res.data.review)
 
     };
 
@@ -28,6 +34,28 @@ const Profile = () => {
   }, [path]);
 
   console.log(dev)
+
+
+       // fetch reviews 
+       useEffect(() => {
+        const fetchReviews = async () => {
+          // const res = await axios.get("/review");
+          const res = await axios.get(`/review/${user._id}`);
+        //   const res = await axios.get("/review");
+        //   const res = await axios.get("/review"+ path);
+          console.log(res);
+          setReviews(res.data);
+        };
+    
+        fetchReviews();
+      }, []);
+
+   
+
+    console.log(reviews)
+
+
+ 
 
 
        
@@ -62,13 +90,24 @@ const Profile = () => {
         <span className="item">{dev.technology}</span>
         </div>
         <div className="review">
-          <Link to={`/review/${dev._id}`}>
+          {/* {dev.map((dev) => (
 
-          <button>
-            review
-          </button>
-          
-          </Link>
+              <Review dev={dev} /> 
+
+          ))} */}
+
+          {reviews.map((review) => (
+            // <Review review={review} />
+            <p className="text"> {review.review}</p>
+
+          ))}
+
+        
+
+
+
+
+    
           
        
          

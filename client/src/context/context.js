@@ -1,6 +1,7 @@
 import React, {useState, useReducer, useEffect,useRef} from "react";
 import axios from "axios";
 import reducer from "./reducer";
+import { Link, useLocation } from "react-router-dom";
 
 
 
@@ -17,6 +18,7 @@ const initialState = {
 export const AppProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const [devs, setDevs] = useState([])
+  
 
 
  
@@ -41,6 +43,10 @@ export const AppProvider = ({children}) => {
    
 
     console.log(devs)
+
+
+
+      
 
 
 
