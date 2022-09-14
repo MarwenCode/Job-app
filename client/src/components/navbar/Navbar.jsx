@@ -1,17 +1,33 @@
 import React from 'react';
 import "./navbar.scss"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaSignInAlt, FaSignOutAlt, FaUser} from 'react-icons/fa';
 import { AppContext } from '../../context/context';
 import { useContext } from 'react';
 
 const Navbar = () => {
-    const {user} = useContext(AppContext)
+    const {user, dispatch} = useContext(AppContext)
+
+    const Navigate = useNavigate();
+
+    const handleLogout = () => {
+        dispatch({ type: "LOGOUT" });
+    
+        Navigate("/login");
+      };
+
+
+
   return (
     <div className='navbar'>
     <div className="title" >
-        <Link to='/'  className="link">Job App</Link>
+        <Link to='/'  className="link">Job App </Link>
+        <span className='version'>for devs</span>
     </div>
+    <Link to="/register/user"        className='link'>
+    <span className='client'>clic here to join the app for clients</span>
+    </Link>
+  
     {user ? (
         <>
         <Link to="/forum" className='link'>
@@ -20,7 +36,7 @@ const Navbar = () => {
         </Link>
 
          
-         <button className='logout'>Logout
+         <button className='logout'   onClick={handleLogout}>Logout
         <FaSignOutAlt className='signoutIcon'/>
 
         </button>
@@ -42,7 +58,7 @@ const Navbar = () => {
             </Link>
         </li>
         <li>
-            <Link to='register'  className="link">
+            <Link to='/'  className="link">
                 <FaUser /> register
             </Link>
         </li>

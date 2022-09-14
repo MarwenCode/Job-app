@@ -13,6 +13,10 @@ const initialState = {
     error:false
 }
 
+const userClient = {
+    userClient : JSON.parse(localStorage.getItem("userClient")) || null,
+}
+
 
 
 export const AppProvider = ({children}) => {
