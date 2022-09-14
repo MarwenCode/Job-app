@@ -24,14 +24,16 @@ const Navbar = () => {
         <Link to='/'  className="link">Job App </Link>
         <span className='version'>for devs</span>
     </div>
-    <Link to="/register/user"        className='link'>
-    <span className='client'>clic here to join the app for clients</span>
-    </Link>
+  
   
     {user ? (
         <>
         <Link to="/forum" className='link'>
         <button className='forum'>Forum</button>
+        
+        </Link>
+        <Link to="/Jobs" className='link'>
+        <button className='forum'>Jobs</button>
         
         </Link>
 
@@ -51,6 +53,10 @@ const Navbar = () => {
 
 
     (
+        <>
+              {/* <Link to="/register/user"        className='link'>
+        <span className='client'>clic here to join the app for clients</span>
+        </Link> */}
         <ul className='item'>
         <li>
             <Link to='login'  className="link">
@@ -63,6 +69,12 @@ const Navbar = () => {
             </Link>
         </li>
     </ul>
+        
+        
+        
+        </>
+  
+   
 
 
     )

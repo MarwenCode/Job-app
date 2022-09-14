@@ -14,11 +14,16 @@ const UserSchema = new mongoose.Schema({
         max: 50,
         unique: true,
       },
+      profilePicture: {
+        type: String,
+        default: "",
+      },
       password: {
         type: String,
         required: true,
         min: 6,
       },
+   
 
 
 },{ timestamps: true }

@@ -87,10 +87,18 @@ const Profile = () => {
         <div className="left">
           <span className="username">{dev.username}</span>
           <span className="email">{dev.email}</span>
+          <span className="tech">{dev.technology}</span>
+          <Link to="/contact">
+
+          <button className="contact">send me a message</button>
+          
+          </Link>
+         
         </div>
       </div>
-      <div className="skills">
-        <span className="item">{dev.technology}</span>
+      <div className="description">
+       
+        <span className="desc">{dev.description}</span>
       </div>
       <div className="reviews">
         {/* {dev.map((dev) => (
@@ -104,7 +112,16 @@ const Profile = () => {
           <>
             <div className="review">
               <div className="top">
-                <img className="img" src="" alt="" />
+              <img
+            className="img"
+            src={
+              user.profilePicture
+                ? user.profilePicture
+                : 
+                "/images/noAvatar.png"
+            }
+            alt=""
+          />
                 <span className="user"> {review.username} </span>
                 <span className="date"> {review.createdAt}</span>
               </div>
@@ -114,21 +131,31 @@ const Profile = () => {
             </div>
           </>
         ))}
+
+  
       </div>
-      <div className="down">
-        Enter your review
+
+      <div className="fieldReview">
+        <div className="item">
+        <span className="title"> write your review</span>
         <button className="reviewBtn" onClick={(e) => addReview(e)}>
-          > Subbmit
+          Subbmit
         </button>
+
+        </div>
+      
         {reviewMode && (
-          <textarea
+          <textarea 
+            className="input"
             value={review}
             onChange={(e) => setReview(e.target.value)}
           />
         )}
       </div>
+    
     </div>
   );
 };
 
 export default Profile;
+
