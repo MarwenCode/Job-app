@@ -1,26 +1,26 @@
-import React, { useEffect, useState,useContext } from "react";
-import "./review.scss"
+// import React, { useEffect, useState,useContext } from "react";
+// import "./review.scss"
 
 
 
-const Review = ({review}) => {
+// const Review = ({review}) => {
 
 
 
-  return (
-    <div className="review">
-      <div className="top">
-        <span className="user"> {review.username} </span>
-        <span className="date"> {review.createdAt}</span>
+//   return (
+//     <div className="review">
+//       <div className="top">
+//         <span className="user"> {review.username} </span>
+//         <span className="date"> {review.createdAt}</span>
 
-      </div>
-      <div className="down">
-        <p className="text">{review.review}</p>
+//       </div>
+//       <div className="down">
+//         <p className="text">{review.review}</p>
 
-      </div>
+//       </div>
       
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
-export default Review
+// export default Review

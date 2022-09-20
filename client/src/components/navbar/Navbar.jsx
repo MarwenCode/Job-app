@@ -54,9 +54,7 @@ const Navbar = () => {
 
     (
         <>
-              {/* <Link to="/register/user"        className='link'>
-        <span className='client'>clic here to join the app for clients</span>
-        </Link> */}
+        
         <ul className='item'>
         <li>
             <Link to='login'  className="link">
@@ -64,7 +62,7 @@ const Navbar = () => {
             </Link>
         </li>
         <li>
-            <Link to='/'  className="link">
+            <Link to='/register'  className="link">
                 <FaUser /> register
             </Link>
         </li>

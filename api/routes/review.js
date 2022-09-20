@@ -52,6 +52,29 @@ reviewRoute.get("/:DevUserId", async (req, res) => {
     }
   });
 
+  //delete a review
+  reviewRoute.delete("/:id", async(req, res) => {
+    try {
+      const review = await Review.findById(req.params.id)
+      if (review.userId === req.body.userId) {
+        try {
+          await review.deleteOne();
+          res.status(200).json("review has been deleted")
+
+        }catch {
+          res.status(500).json(error);
+
+       
+      } }else {
+        res.status(401).json("you can delete only your review");
+      }
+      
+    } catch (error) {
+      
+    }
+  })
+
+
 
 
 export default reviewRoute

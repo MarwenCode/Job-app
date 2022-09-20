@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useLocation } from "react-router-dom";
 import Rating from "../rating/Rating";
 import { FaStar } from "react-icons/fa";
+import {AiFillEdit, AiFillDelete} from "react-icons/ai"
 import Reviews from "../reviews/Reviews";
 import Review from "../review/Review";
 import "./profile.scss";
@@ -16,7 +17,7 @@ const Profile = () => {
 
   //to create a new review
   const [review, setReview] = useState([]);
-  const [reviewMode, setReviewtMode] = useState(true);
+  const [reviewMode, setReviewtMode] = useState(false);
   console.log(user);
 
   const [dev, setDev] = useState({});
@@ -70,12 +71,29 @@ const Profile = () => {
       console.log(res);
 
       console.log(res.data);
+      setReviewtMode(false)
     } catch (err) {
       console.log(err);
     }
 
     addReview();
   };
+
+
+
+  const deleteReview = async(reviewId) => {
+    console.log(reviewId)
+  
+    try {
+
+      await axios.delete( `/review/${reviewId}`, {data: {userId: user._id}})
+      
+      window.location.replace(`/dev/${dev._id}`);
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
 
   return (
     <div className="profile">
@@ -88,7 +106,7 @@ const Profile = () => {
           <span className="username">{dev.username}</span>
           <span className="email">{dev.email}</span>
           <span className="tech">{dev.technology}</span>
-          <Link to="/contact">
+          <Link to={`/contact/${dev._id}`} className="link">
 
           <button className="contact">send me a message</button>
           
@@ -112,22 +130,33 @@ const Profile = () => {
           <>
             <div className="review">
               <div className="top">
+                
               <img
             className="img"
-            src={
-              user.profilePicture
-                ? user.profilePicture
-                : 
-                "/images/noAvatar.png"
-            }
-            alt=""
+            // src={
+            //   user.profilePicture
+            //     ? user.profilePicture
+            //     : 
+            //     "/images/noAvatar.png"
+            // }
+            // alt=""
           />
+         
                 <span className="user"> {review.username} </span>
                 <span className="date"> {review.createdAt}</span>
+                <AiFillDelete className="deleteReviewIcon" 
+
+                onClick={()=> deleteReview(review._id)}
+                
+                />
+                
               </div>
+            
               <div className="down">
                 <p className="text">{review.review}</p>
+               
               </div>
+            
             </div>
           </>
         ))}
@@ -138,9 +167,21 @@ const Profile = () => {
       <div className="fieldReview">
         <div className="item">
         <span className="title"> write your review</span>
-        <button className="reviewBtn" onClick={(e) => addReview(e)}>
-          Subbmit
-        </button>
+
+        {reviewMode && (
+             <button className="reviewBtn" onClick={(e) => addReview(e)}
+        
+             >
+               Subbmit
+             </button>
+
+
+        )}
+     
+        <AiFillEdit className="addreviewIcon"
+           onClick={() => setReviewtMode((prev) => !prev)}
+        
+        />
 
         </div>
       

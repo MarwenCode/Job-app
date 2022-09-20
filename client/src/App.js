@@ -8,6 +8,8 @@ import Login from "./pages/login/Login";
 import Profile from "./components/profile/Profile";
 import Review from "./components/review/Review";
 import Contact from "./components/contact/Contact";
+import {ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // import RegisterClient from "./pages/registerClient/RegisterClient";
 // import LoginClient from "./pages/loginClient/LoginClient";
 import "./app.scss";
@@ -19,27 +21,26 @@ function App() {
       <div className="container">
         <Navbar />
         <Routes>
-          {user ? (
-            <>
-              <Route path="/" element={<Home />} />
+            
+              <Route path="/" element={user ? <Home /> : <Register />} />
 
               <Route path="/dev/:id" element={<Profile />} />
               <Route path="/review/:id" element={<Review />} />
-              <Route path="/contact" element={<Contact />} />
-            </>
-          ) : (
-            <>
-              <Route path="/" element={<Register />} />
-              <Route path="/login" element={<Login />} />
+              <Route path="/contact/:id" element={<Contact />} />
+         
+   
+         
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login /> } />
 
-              {/* <Route path="/register/user" element={<RegisterClient />} />
-              <Route path="/login/user" element={<LoginClient />} /> */}
-            </>
-          )}
+        
+     
         </Routes>
       </div>
+      <ToastContainer />
     </Router>
   );
 }
 
 export default App;
+
