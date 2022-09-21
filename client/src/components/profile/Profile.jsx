@@ -143,7 +143,7 @@ const Profile = () => {
           />
          
                 <span className="user"> {review.username} </span>
-                <span className="date"> {review.createdAt}</span>
+                <span className="date"> {new Date(review.createdAt).toDateString()}</span>
                 <AiFillDelete className="deleteReviewIcon" 
 
                 onClick={()=> deleteReview(review._id)}
@@ -199,4 +199,5 @@ const Profile = () => {
 };
 
 export default Profile;
+
 

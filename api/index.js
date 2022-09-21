@@ -9,7 +9,8 @@ import userRoute from "./routes/users.js";
 import devRoute from "./routes/devs.js";
 import questionRoute from "./routes/questions.js";
 import answerRoute from "./routes/answers.js";
-import reviewRoute from "./routes/review.js"
+import reviewRoute from "./routes/review.js";
+import jobRoute from "./routes/job.js";
 import { fileURLToPath } from "url";
 
 const app = express()
@@ -35,7 +36,8 @@ app.use("/api/user", userRoute);
 app.use("/api/dev", devRoute);
 app.use("/api/question", questionRoute)
 app.use("/api/answers", answerRoute);
-app.use("/api/review", reviewRoute)
+app.use("/api/review", reviewRoute);
+app.use("/api/job", jobRoute);
 
 
 
