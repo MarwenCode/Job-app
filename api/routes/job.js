@@ -15,5 +15,18 @@ jobRoute.post("/", async(req, res) => {
     }
 })
 
+//get all job 
+jobRoute.get("/", async(req, res) => {
+    try {
+        const jobs = await Job.find()
+        res.status(200).json(jobs)
+        
+    } catch (error) {
+        res.status(500).json(error)
+    }
+
+})
+
+
 
 export default jobRoute

@@ -8,6 +8,7 @@ import Login from "./pages/login/Login";
 import Profile from "./components/profile/Profile";
 import Review from "./components/review/Review";
 import Contact from "./components/contact/Contact";
+import Jobs from "./components/jobs/Jobs"
 import {ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import RegisterClient from "./pages/registerClient/RegisterClient";
@@ -27,9 +28,7 @@ function App() {
               <Route path="/dev/:id" element={<Profile />} />
               <Route path="/review/:id" element={<Review />} />
               <Route path="/contact/:id" element={<Contact />} />
-         
-   
-         
+              <Route path="/jobs" element={<Jobs />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login /> } />
 
