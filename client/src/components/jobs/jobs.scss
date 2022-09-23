@@ -1,0 +1,34 @@
+.jobs {
+    .paginationBttns {
+        width: 80%;
+        height: 40px;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin-left: 60px;
+        
+      }
+      
+      .paginationBttns a {
+        padding: 10px;
+        margin: 8px;
+        border-radius: 5px;
+        // border: 1px solid #2b2eff;
+        color: white;
+        cursor: pointer;
+        border: 1px solid #000;
+        background: #000;
+      }
+      
+      .paginationBttns a:hover {
+        color: white;
+        background-color: grey;
+      }
+      
+      .paginationActive a {
+        color: white;
+        background-color: grey;
+      }
+      
+  
+}

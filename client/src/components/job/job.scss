@@ -35,13 +35,13 @@
         }
 
         .right {
-            display: flex;
             margin-left: 550px;
             align-items: center;
 
 
             .type {
                 font-size: 1rem;
+               
                 
 
             }
@@ -62,6 +62,7 @@
                 justify-content: center;
                 height: 30px;
                 margin-left: 10px;
+                margin-top: 20px;
 
             }
         }
