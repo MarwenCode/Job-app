@@ -1,0 +1,142 @@
+.question {
+    background-color: rgb(98, 104, 104);
+    border-bottom: 1px solid grey;
+    min-height: 450px;
+
+    .top{
+        display: flex;
+        margin:10px 10px;
+        align-items: center;
+        justify-content: flex-start;
+
+        .name{
+            margin-top: 5px;
+        }
+
+
+        .img{
+            width: 70px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 7px;
+            border-radius: 30px;
+            margin: 10px 10px;
+        }
+
+
+
+    }
+
+    .down {
+        background-color: blanchedalmond;
+        margin: 10px 10px;
+        height: 100px;
+        border-radius: 10px;
+       
+
+        .text {
+            text-align: start;
+            margin-left: 10px;
+            padding: 10px;
+
+
+        }
+
+    }
+
+    .answers {
+        // background-color: rgb(196, 196, 181);
+        margin: 30px 10px;
+        // height: 70px;
+        border-radius: 10px;
+        // display: flex;
+        padding: 10px;
+        // margin-left: -200px;
+
+        .blocAnswer{
+            background-color: azure;
+            width: 100%;
+            min-height: 150px;
+            border-radius: 20px;
+          
+           
+
+            .imgName{
+                margin-top: 20px;
+                margin-left: 200px;
+                display: flex;
+                
+               
+    
+    
+                .answerImg {
+                    width: 50px;
+                    height: 50px;
+                    object-fit: cover;
+                    border-radius: 7px;
+                    border-radius: 30px;
+                    // margin: 10px 10px;
+                    margin-left: -160px;
+                    margin-top: 10px;
+                    border-radius: 20px;
+                  
+        
+        
+                }
+    
+                .answerName {
+                   margin-left: 20px;
+                   align-items: center;
+                   margin-top: 30px;
+                }
+    
+                
+    
+    
+            }
+
+            .answerText{
+                text-align: start;
+                margin: 20px;
+            }
+    
+           
+         
+    
+        
+
+
+
+
+
+
+        }
+       
+
+
+       
+
+    }
+
+    .editAnswer {
+    
+        .addIcon{
+
+        }
+
+        .AddAnswer {
+
+        }
+        .reply {
+
+        }
+        .input {
+
+        }
+
+    }
+
+   
+
+   
+}

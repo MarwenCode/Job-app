@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useLocation } from "react-router-dom";
 import Rating from "../rating/Rating";
 import { FaStar } from "react-icons/fa";
-import {AiFillEdit, AiFillDelete} from "react-icons/ai"
+import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import Reviews from "../reviews/Reviews";
 import Review from "../review/Review";
 import "./profile.scss";
@@ -71,7 +71,7 @@ const Profile = () => {
       console.log(res);
 
       console.log(res.data);
-      setReviewtMode(false)
+      setReviewtMode(false);
     } catch (err) {
       console.log(err);
     }
@@ -79,21 +79,17 @@ const Profile = () => {
     addReview();
   };
 
+  const deleteReview = async (reviewId) => {
+    console.log(reviewId);
 
-
-  const deleteReview = async(reviewId) => {
-    console.log(reviewId)
-  
     try {
+      await axios.delete(`/review/${reviewId}`, { data: { userId: user._id } });
 
-      await axios.delete( `/review/${reviewId}`, {data: {userId: user._id}})
-      
       window.location.replace(`/dev/${dev._id}`);
     } catch (error) {
       console.log(error);
     }
-
-  }
+  };
 
   return (
     <div className="profile">
@@ -107,15 +103,11 @@ const Profile = () => {
           <span className="email">{dev.email}</span>
           <span className="tech">{dev.technology}</span>
           <Link to={`/contact/${dev._id}`} className="link">
-
-          <button className="contact">send me a message</button>
-          
+            <button className="contact">send me a message</button>
           </Link>
-         
         </div>
       </div>
       <div className="description">
-       
         <span className="desc">{dev.description}</span>
       </div>
       <div className="reviews">
@@ -130,74 +122,62 @@ const Profile = () => {
           <>
             <div className="review">
               <div className="top">
-                
-              <img
-            className="img"
-            // src={
-            //   user.profilePicture
-            //     ? user.profilePicture
-            //     : 
-            //     "/images/noAvatar.png"
-            // }
-            // alt=""
-          />
-         
-                <span className="user"> {review.username} </span>
-                <span className="date"> {new Date(review.createdAt).toDateString()}</span>
-                <AiFillDelete className="deleteReviewIcon" 
-
-                onClick={()=> deleteReview(review._id)}
-                
+                <img
+                  className="img"
+                  // src={
+                  //   user.profilePicture
+                  //     ? user.profilePicture
+                  //     :
+                  //     "/images/noAvatar.png"
+                  // }
+                  // alt=""
                 />
-                
+
+                <span className="user"> {review.username} </span>
+                <span className="date">
+                  {" "}
+                  {new Date(review.createdAt).toDateString()}
+                </span>
+                <AiFillDelete
+                  className="deleteReviewIcon"
+                  onClick={() => deleteReview(review._id)}
+                />
               </div>
-            
+
               <div className="down">
                 <p className="text">{review.review}</p>
-               
               </div>
-            
             </div>
           </>
         ))}
-
-  
       </div>
 
       <div className="fieldReview">
         <div className="item">
-        <span className="title"> write your review</span>
+          <span className="title"> write your review</span>
 
-        {reviewMode && (
-             <button className="reviewBtn" onClick={(e) => addReview(e)}
-        
-             >
-               Subbmit
-             </button>
+          {reviewMode && (
+            <button className="reviewBtn" onClick={(e) => addReview(e)}>
+              Subbmit
+            </button>
+          )}
 
-
-        )}
-     
-        <AiFillEdit className="addreviewIcon"
-           onClick={() => setReviewtMode((prev) => !prev)}
-        
-        />
-
+          <AiFillEdit
+            className="addreviewIcon"
+            onClick={() => setReviewtMode((prev) => !prev)}
+          />
         </div>
-      
+
         {reviewMode && (
-          <textarea 
+          <textarea
             className="input"
             value={review}
             onChange={(e) => setReview(e.target.value)}
           />
         )}
       </div>
-    
     </div>
   );
 };
 
 export default Profile;
-
-

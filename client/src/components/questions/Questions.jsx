@@ -1,40 +1,54 @@
-import React,{ useState } from 'react'
-import { useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect, useContext } from "react";
+import "./questions.scss";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import Question from "../question/Question"
+import { AppContext } from "../../context/context";
 
 const Questions = () => {
+  const { user } = useContext(AppContext);
 
-    const [questions, setQuestions] = useState([])
+  const [questions, setQuestions] = useState([]);
 
-    //fetch questions 
-    useEffect(() => {
-        const getQuestions = async() => {
-            const res = await axios.get("/question")
-            console.log(res)
-            setQuestions(res.data)
-        }
 
-        getQuestions()
-    },[])
+  //fetch questions
+  useEffect(() => {
+    const getQuestions = async () => {
+      const res = await axios.get("/question");
+      console.log(res);
+      setQuestions(res.data);
+    
+    };
 
-    console.log(questions)
+    getQuestions();
+  }, []);
+
+  console.log(questions);
+
+
+
+  
+
 
 
 
   return (
-    <div className='questions'>
-        <h1>You can Ask your question...devs are here!</h1>
-        {questions.map((question) => (
-            <>
-             <span>{question.username}</span>
-             <p>{question.text}</p>
-            
-            </>
-           
-        ))}
-        
-    </div>
-  )
-}
+    <div className="questions">
+        <Link   to="/addquestion"  className="link">
+        <h1>Click here and  Ask your question...devs are here!</h1>
+        </Link>
+     
+      {questions.map((question, index)=> (
+      <Question question={question} key={index}/>
+      
 
-export default Questions
+    ))}
+
+  
+
+
+    </div>
+  );
+};
+
+export default Questions;
