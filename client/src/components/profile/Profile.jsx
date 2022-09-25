@@ -79,6 +79,8 @@ const Profile = () => {
     addReview();
   };
 
+  
+  //delete a review
   const deleteReview = async (reviewId) => {
     console.log(reviewId);
 

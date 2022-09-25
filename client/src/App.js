@@ -10,7 +10,6 @@ import Review from "./components/review/Review";
 import Contact from "./components/contact/Contact";
 import Jobs from "./components/jobs/Jobs";
 import Forum from "./components/forum/Forum";
-import AddQuestion from "./components/addQuestion/AddQuestion";
 import {ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import RegisterClient from "./pages/registerClient/RegisterClient";
@@ -34,7 +33,7 @@ function App() {
               <Route path="/forum" element={<Forum />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login /> } />
-              <Route path="/addquestion" element={<AddQuestion /> } />
+             
 
         
      

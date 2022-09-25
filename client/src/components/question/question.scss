@@ -30,15 +30,68 @@
     .down {
         background-color: blanchedalmond;
         margin: 10px 10px;
-        height: 100px;
+       min-height: 100px;
         border-radius: 10px;
+        display: flex;
+        align-items:flex-start;
        
 
         .text {
             text-align: start;
-            margin-left: 10px;
+            // margin-left: -40px;
             padding: 10px;
+         
+         
 
+
+        }
+
+        .inputEdit{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .editquestion{
+                resize: none;
+                width: 200px;
+                border-radius: 5px;
+                overflow: hidden;
+                min-height: 50px;
+                max-height: 150px;
+                // margin-right: 650px;
+                margin-top: 50px;
+                margin-right: -200px;
+               
+            }
+            .editquestionBtn{
+                height: 20px;
+                margin-left: 30px;
+                margin-top: 150px;
+            }
+    
+
+
+
+        }
+     
+
+
+
+
+
+        .deleteQuestion{
+            margin-top: 8px;
+            // margin-bottom: 80px;
+            width: 40px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .editQuestion{
+            margin-top: 8px;
+            margin-bottom: 80px;
+            width: 40px;
+            height: 20px;
+            cursor: pointer;
 
         }
 
@@ -65,6 +118,7 @@
                 margin-top: 20px;
                 margin-left: 200px;
                 display: flex;
+                align-items: flex-start;
                 
                
     
@@ -89,6 +143,19 @@
                    align-items: center;
                    margin-top: 30px;
                 }
+
+                .deleteAnswer{
+                    margin-left: 20px;
+                    align-items: center;
+                    margin-top: 30px;
+
+                }
+                .editAnswer{
+                    margin-left: 20px;
+                    align-items: center;
+                    margin-top: 30px;
+
+                }
     
                 
     
@@ -99,6 +166,8 @@
                 text-align: start;
                 margin: 20px;
             }
+
+           
     
            
          
@@ -119,18 +188,52 @@
     }
 
     .editAnswer {
+        background-color: rgb(197, 231, 231);
+        cursor: pointer;
+
+        .title{
+            font-size: 3rem;
+            font-weight: 900;
+        }
     
         .addIcon{
-
+            margin-left: 20px;
+        
         }
 
         .AddAnswer {
+            display: flex;
 
         }
         .reply {
+            padding: 10px 10px;
+            // border: 1px solid #000;
+            border-radius: 5px;
+            background: #000;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            appearance: button;
+            align-items: center;
+            justify-content: center;
+            margin-right: -200px;
+            margin-bottom: 20px;
+           
 
         }
         .input {
+            resize: none;
+            width: 400px;
+            border-radius: 5px;
+            overflow: hidden;
+            min-height: 100px;
+            max-height: 150px;
+            // margin-right: 650px;
+            margin-top: 50px;
+            // margin-right: -200px;
+            margin-bottom: 100px;
 
         }
 

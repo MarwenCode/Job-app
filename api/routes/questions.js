@@ -45,13 +45,13 @@ questionRoute.delete("/:id", async (req, res) => {
     const question = await Question.findById(req.params.id);
     if (question.userId === req.body.userId) {
       try {
-        await quesstion.deleteOne();
-        res.status(200).json("post has been deleted");
+        await question.deleteOne();
+        res.status(200).json("question has been deleted");
       } catch (error) {
         res.status(500).json(error);
       }
     } else {
-      res.status(401).json("you can delete only your post");
+      res.status(401).json("you can delete only your question");
     }
   } catch (error) {
     res.status(500).json(error);
@@ -109,4 +109,6 @@ questionRoute.get("/", async (req, res) => {
 
 
   export default questionRoute;
+
+
 
