@@ -29,6 +29,37 @@ const connect = async () => {
 }
 
 
+//upload pic 
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
+console.log("images", __dirname);
+
+app.use("/images", express.static(path.join(__dirname, "/images")));
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "images");
+  },
+  filename: (req, file, cb) => {
+    cb(null, req.body.name);
+  },
+});
+
+const upload = multer({ storage: storage });
+app.post("/api/upload", upload.single("file"), (req, res) => {
+  res.status(200).json("File has been uploaded");
+});
+
+
+
+
+
+
+
+
+
 app.use(express.json());
 app.use("/api/auth",authRouteDev );
 app.use("/api/auth",authRouteUser );

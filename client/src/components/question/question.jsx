@@ -3,9 +3,11 @@ import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import "./question.scss";
 import { AppContext } from "../../context/context";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const Question = ({ question }) => {
   const { user } = useContext(AppContext);
+  const profilepic = "http://localhost:8000/images/";
   const [answer, setAnswer] = useState([]);
   const [addAnswer, setAddAnswer] = useState([]);
   const [editAnswer, setEditAnswer] = useState([]);
@@ -13,6 +15,10 @@ const Question = ({ question }) => {
   const [answerMode, setAnswerMode] = useState(false);
   const [editQuestion, setEditQuestion] = useState("");
   const [editQuestionMode, setEditQuestionMode] = useState(false);
+
+  const params = useParams()
+  console.log(params)
+
 
   //fetch answers
   useEffect(() => {
@@ -68,6 +74,7 @@ const Question = ({ question }) => {
 
   //edit an answer
   const editRespond = async (answerId) => {
+    console.log(answerId)
     try {
       await axios.put(`/answers/${answerId}`, {
         questionId: question._id,
@@ -124,11 +131,16 @@ const Question = ({ question }) => {
   return (
     <div className="question">
       <div className="top">
-        <img className="img" src="/images/image1.jpg" alt="" />
+        <img className="img"   src={
+            // user.profilePicture
+            //   ? profilepic + user.profilePicture
+            //   : 
+              "/images/noAvatar.png"
+          } />
         <span className="name">{question.username}</span>
       </div>
       <div className="down">
-       
+      <p className="text">{question.text}</p>
 
         {editQuestionMode && (
           <div className="inputEdit">
@@ -139,9 +151,10 @@ const Question = ({ question }) => {
             />
             <button className="editquestionBtn"  onClick={(e) => editeQuestion(e)}>edit</button>
           </div>
+          
         ) 
         }
-         <p className="text">{question.text}</p>
+        
 
 <AiFillDelete
           className="deleteQuestion"
@@ -162,10 +175,11 @@ const Question = ({ question }) => {
                 className="deleteAnswer"
                 onClick={() => deleteAnswer(answer._id)}
               />
-              {/* <AiFillEdit
+              <AiFillEdit
                 className="editAnswer"
                 onClick={() => setEditAnswerMode((prev) => !prev)}
-              /> */}
+              
+              />
             </div>
             <p className="answerText">{answer.text}</p>
 

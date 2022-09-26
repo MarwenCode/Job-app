@@ -1,9 +1,10 @@
-import React,{useContext}  from "react";
+import React from "react";
 import {Link} from "react-router-dom";
+
 import "./dev.scss";
 
-const dev = ({ dev }) => {
-  // const { user } = useContext(AppContext);
+const Dev = ({ dev }) => {
+  const profilepic = "http://localhost:8000/images/";
  
   return (
     <Link to={`/dev/${dev._id}`} className="link">
@@ -13,15 +14,15 @@ const dev = ({ dev }) => {
         <div className="right">
           <img 
           className="img" 
-          src="/images/image1.jpg" alt="" 
+          // src="/images/image1.jpg" alt="" 
 
-          // src={
-          //   dev.profilePicture
-          //     ? dev.profilePicture
-          //     : 
-          //     "/images/noAvatar.png"
-          // }
-          // alt=""
+          src={
+            dev.profilePicture
+              ? profilepic + dev.profilePicture
+              : 
+              "/images/noAvatar.png"
+          }
+          alt=""
 
 
           
@@ -47,5 +48,5 @@ const dev = ({ dev }) => {
   );
 };
 
-export default dev;
+export default Dev;
 

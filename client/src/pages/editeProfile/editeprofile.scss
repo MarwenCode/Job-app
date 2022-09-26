@@ -1,0 +1,103 @@
+.ProfileSection {
+  height: 450px;
+
+  .profile {
+    // display: flex;
+    width: 800px;
+    // height:550px;
+    position: absolute;
+    // top: 50%;
+    // left: 50%;
+    margin-top: 10px;
+    margin-left: 100px;
+    // width: 100px;
+    // height: 100px;
+    padding: 20px;
+    @media screen and(min-width: 400px) and(max-width: 1000px) {
+      // transition: 50% 50%;
+      margin-top: 100px;
+      width: 100%;
+      position: absolute;
+      margin-right: 300px;
+    }
+
+    .updateTitle {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #0a577e;
+      margin: 1px;
+    }
+
+    .settingContainer {
+      display: flex;
+      margin: 30px 10px;
+      width: 750px;
+      height: 300px;
+      flex: 9;
+      padding: 20px;
+      margin-left: 0px;
+      background-color: #e3eaee;
+      border-radius: 20px;
+
+      // .settingTitle{
+      //     // display: flex;
+      //     align-items: center;
+      //     justify-content: space-between;
+
+      // }
+
+      .settingForm {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+
+        label {
+          font-size: 20px;
+          margin-top: 20px;
+        }
+
+        .settingProfilePicutre img {
+          height: 70px;
+          width: 70px;
+          border-radius: 20px;
+          object-fit: cover;
+        }
+
+        .settingProfilePicutre {
+          .fileInput {
+            width: 115px;
+            cursor: pointer;
+            background-color: #0a577e;
+          }
+        }
+
+        .settingInput {
+          flex-direction: column;
+          width: 100%;
+          border: none;
+        }
+
+        .settingInput:focus {
+          outline-style: none;
+        }
+
+        .settingsSubmit {
+          padding: 10px 20px;
+          border: 1px solid #000;
+          border-radius: 5px;
+          background: #000;
+          color: #fff;
+          font-size: 16px;
+          font-weight: 700;
+          cursor: pointer;
+          text-align: center;
+          appearance: button;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}

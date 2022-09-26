@@ -11,6 +11,7 @@ import { AppContext } from "../../context/context";
 
 const Profile = () => {
   const { user } = useContext(AppContext);
+  const profilepic = "http://localhost:8000/images/";
 
   //to fetch the reviews from the backend
   const [reviews, setReviews] = useState([]);
@@ -97,7 +98,12 @@ const Profile = () => {
     <div className="profile">
       <div className="top">
         <div className="right">
-          <img className="img" src="/images/image1.jpg" alt="" />
+          <img className="img"   src={
+            dev.profilePicture
+              ? profilepic + dev.profilePicture
+              : 
+              "/images/noAvatar.png"
+          }/>
           <Rating className="rating" />
         </div>
         <div className="left">

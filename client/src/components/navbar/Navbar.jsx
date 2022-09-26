@@ -7,6 +7,7 @@ import { useContext } from 'react';
 
 const Navbar = () => {
     const {user, dispatch} = useContext(AppContext)
+   
 
     const Navigate = useNavigate();
 
@@ -34,6 +35,10 @@ const Navbar = () => {
         </Link>
         <Link to="/Jobs" className='link'>
         <button className='forum'>Jobs</button>
+        
+        </Link>
+        <Link to="/editProfile" className='link'>
+        <button className='forum'>Profile</button>
         
         </Link>
 
