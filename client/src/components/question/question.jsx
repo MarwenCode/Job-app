@@ -16,9 +16,8 @@ const Question = ({ question }) => {
   const [editQuestion, setEditQuestion] = useState("");
   const [editQuestionMode, setEditQuestionMode] = useState(false);
 
-  const params = useParams()
-  console.log(params)
-
+  const params = useParams();
+  console.log(params);
 
   //fetch answers
   useEffect(() => {
@@ -74,7 +73,7 @@ const Question = ({ question }) => {
 
   //edit an answer
   const editRespond = async (answerId) => {
-    console.log(answerId)
+    console.log(answerId);
     try {
       await axios.put(`/answers/${answerId}`, {
         questionId: question._id,
@@ -107,20 +106,16 @@ const Question = ({ question }) => {
   //edit question
   const editeQuestion = async () => {
     try {
-
-      if(user === user._id) {
+      if (question.username === user.username) {
         await axios.put(`/question/${question._id}`, {
           userId: user._id,
           questionId: question._id,
           text: editQuestion,
         });
-
-
-
-      }else {
-        window.alert("you can edit only your answer")
+      } else {
+        window.alert("you can edit only your question !");
       }
-     
+
       window.location.replace("/forum");
       setEditQuestionMode(false);
     } catch (error) {
@@ -131,32 +126,36 @@ const Question = ({ question }) => {
   return (
     <div className="question">
       <div className="top">
-        <img className="img"   src={
+        <img
+          className="img"
+          src={
             // user.profilePicture
             //   ? profilepic + user.profilePicture
-            //   : 
-              "/images/noAvatar.png"
-          } />
+            //   :
+            "/images/noAvatar.png"
+          }
+        />
         <span className="name">{question.username}</span>
       </div>
       <div className="down">
-      <p className="text">{question.text}</p>
+        <p className="text">{question.text}</p>
 
         {editQuestionMode && (
           <div className="inputEdit">
             <textarea
-            className="editquestion"
+              className="editquestion"
               value={editQuestion}
               onChange={(e) => setEditQuestion(e.target.value)}
             />
-            <button className="editquestionBtn"  onClick={(e) => editeQuestion(e)}>edit</button>
+            <button
+              className="editquestionBtn"
+              onClick={(e) => editeQuestion(e)}>
+              edit
+            </button>
           </div>
-          
-        ) 
-        }
-        
+        )}
 
-<AiFillDelete
+        <AiFillDelete
           className="deleteQuestion"
           onClick={() => deleteQuestion(question._id)}
         />
@@ -171,6 +170,7 @@ const Question = ({ question }) => {
             <div className="imgName">
               <img src="" className="answerImg" />
               <span className="answerName">{answer.username} </span>
+
               <AiFillDelete
                 className="deleteAnswer"
                 onClick={() => deleteAnswer(answer._id)}
@@ -178,28 +178,25 @@ const Question = ({ question }) => {
               <AiFillEdit
                 className="editAnswer"
                 onClick={() => setEditAnswerMode((prev) => !prev)}
-              
               />
             </div>
             <p className="answerText">{answer.text}</p>
-
-        
           </div>
         ))}
-            {editAnswerMode && (
-              <>
-                <form className="edit">
-                  <textarea
-                    className=""
-                    value={editAnswer}
-                    onChange={(e) => setEditAnswer(e.target.value)}
-                  />
-                </form>
-                <button className="edited" onClick={(e) => editRespond(e)}>
-                  edit
-                </button>
-              </>
-            )}
+        {editAnswerMode && (
+          <>
+            <form className="edit">
+              <textarea
+                className=""
+                value={editAnswer}
+                onChange={(e) => setEditAnswer(e.target.value)}
+              />
+            </form>
+            <button className="edited" onClick={(e) => editRespond(e)}>
+              edit
+            </button>
+          </>
+        )}
       </div>
       <div className="editAnswer">
         <span className="tite">Add an answer</span>

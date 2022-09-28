@@ -30,6 +30,7 @@ const DevUserSchema = new mongoose.Schema(
     },
     technology: {
       type: String,
+      default: "",
     },
 
     cost: {

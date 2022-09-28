@@ -30,12 +30,18 @@
                 font-size: 1rem;
                 font-weight: 700;
 
+              
+
  
+            }
+            .place{
+                width:30px;
+              
             }
         }
 
         .right {
-            margin-left: 550px;
+            margin-left: 650px;
             align-items: center;
 
 
@@ -72,8 +78,18 @@
     .down{
         // background-color: chocolate;
         height: 350px;
-        margin: 40px 30px;
+        margin: 40px 40px;
        text-align: justify;
+
+       .description{
+        width: 750px;
+        // border: 1px solid black;
+        background:rgb(236, 234, 232);
+        min-height: 150px;
+        padding: 10px;
+        border-radius: 20px;
+        
+       }
 
 
     }

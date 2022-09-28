@@ -17,6 +17,59 @@
        
        
     }
+
+    .sectionSearch{
+        margin-top: 0px;
+   
+        position: relative;
+        width: 580px;
+    
+        margin-top: 0px;
+        margin-left: 75px;
+
+    
+        align-items: center;
+     
+        height: 100px;
+        background-color: rgb(250, 251, 252);
+       
+        z-index: 1;
+        position: absolute;
+        border-radius: 10px;
+        position: absolute;
+ 
+        overflow: hidden;
+        overflow-y: auto;
+        scroll-margin-block: rgb(240, 225, 225);
+
+        .sectionSearch {
+            overflow-y: scroll;
+          }
+
+     
+
+        
+
+
+
+        .searchTerm {
+           
+            // position: absolute;
+            // height: 350px;
+            // margin-left: 150px;
+            // width: 250px;
+            text-align: start;
+          
+     
+         }
+
+
+    }
+
+  
+
+
+
   
 
     .Fasearch {
