@@ -8,7 +8,7 @@ const Home = () => {
   const {devs} = useContext(AppContext)
   return (
     <div className='home'>
-      <Search />
+      {/* <Search /> */}
       <Devs devs={devs}/>
 
 
