@@ -1,19 +1,44 @@
-import React from 'react';
-import Dev from '../dev/Dev';
-import "./devs.scss"
+import React, { useState } from "react";
+import Dev from "../dev/Dev";
+import "./devs.scss";
 
-const Devs = ({devs}) => {
+const Devs = ({ devs }) => {
+  const [selectedTech, setSelectedTech] = useState("");
+  const radios = ["react", "python", "javaScript"];
+  console.log(devs);
   return (
-    <div className='devs'>
-      {devs.map((dev, index) => (
-        <Dev dev={dev} key={index} />
+    <div className="devs">
+      {radios.map((tech) => (
+        <div className="top">
+          <li className="list">
+            <label htmlFor={tech} className="labelFilter">
+              <input
+                type="radio"
+                className="inputTech"
+                id={tech}
+                name="filterTech"
+                checked={tech === selectedTech}
+                onChange={(e) => setSelectedTech(e.target.id)}
+              />
 
-
-      
+              {tech}
+            </label>
+          </li>
+        </div>
       ))}
 
-    </div>
-  )
-}
+      {selectedTech && <button className="all" onClick={() => setSelectedTech("")}>All</button>}
 
-export default Devs
+      <div className="down">
+        {devs
+          .filter((dev) => dev.technology.includes(selectedTech))
+
+          .map((dev, index) => (
+            <Dev dev={dev} key={index} />
+          ))}
+      </div>
+    </div>
+  );
+};
+
+export default Devs;

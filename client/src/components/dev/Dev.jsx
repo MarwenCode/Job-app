@@ -30,9 +30,9 @@ const Dev = ({ dev }) => {
         </div>
 
         <div className="left">
-          <span>{dev.username}</span>
-          <span>{dev.email}</span>
-          <span>{dev.technology}</span>
+          <span className="username">{dev.username}</span>
+          <span className="email">{dev.email}</span>
+          <span className="tech">{dev.technology}</span>
         </div>
 
     </div>
