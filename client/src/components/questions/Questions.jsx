@@ -9,11 +9,8 @@ const Questions = () => {
   const { user } = useContext(AppContext);
 
   const [questions, setQuestions] = useState([]);
-  const [askQuestion ,setAskQuestion] = useState([])
-  const [questionMode, setQuestionMode] = useState(false)
-
-
-
+  const [askQuestion, setAskQuestion] = useState([]);
+  const [questionMode, setQuestionMode] = useState(false);
 
   //fetch questions
   useEffect(() => {
@@ -21,7 +18,6 @@ const Questions = () => {
       const res = await axios.get("/question");
       console.log(res);
       setQuestions(res.data);
-    
     };
 
     getQuestions();
@@ -32,88 +28,57 @@ const Questions = () => {
   // ask a question function
   const Ask = (e) => {
     e.preventDefault();
-    
+
     const newQuestion = {
       userId: user._id,
       username: user.username,
-      text: askQuestion
-    }
+      text: askQuestion,
+    };
 
     try {
-
       const res = axios.post("/question", newQuestion);
-      setAskQuestion(res.data)
-      console.log(res)
+      setAskQuestion(res.data);
+      console.log(res);
       window.location.replace("/forum");
-      
-      
     } catch (error) {
-      console.log(error)
-      
+      console.log(error);
     }
 
-    Ask()
-
-
-
-
-  }
-
-  
-
-
-
-  
-
-
-
+    Ask();
+  };
 
   return (
     <div className="questions">
-      
-        <h1 > Ask your question...devs are here!</h1>
-        <button className="btnAsk" onClick={() => setQuestionMode((prev) => !prev)}>Ask</button>
+      <h1> Ask your question...devs are here!</h1>
+      <button
+        className="btnAsk"
+        onClick={() => setQuestionMode((prev) => !prev)}>
+        Ask
+      </button>
 
-        <div className='addquestion'>
-          { questionMode && (
-            <>
-                           <form >
-            <textarea
-             className="questionInput"
-             value={askQuestion}
-             onChange={(e) => setAskQuestion(e.target.value)}
-             
-             />
+      <div className="addquestion">
+        {questionMode && (
+          <>
+            <form>
+              <textarea
+                className="questionInput"
+                value={askQuestion}
+                onChange={(e) => setAskQuestion(e.target.value)}
+              />
             </form>
 
-<button className="btnQuestion" onClick={(e) =>Ask(e)}>Submit</button>
-            
-            </>
+            <button className="btnQuestion" onClick={(e) => Ask(e)}>
+              Submit
+            </button>
+          </>
+        )}
+      </div>
 
-
-
-          )
-
-
-
-
-          }
-  
-
-    </div>
-     
-      {questions.map((question, index)=> (
-      <Question question={question} key={index}/>
-      
-
-    ))}
-
-  
-
-
+      {questions.map((question, index) => (
+        <Question question={question} key={index} />
+      ))}
     </div>
   );
 };
 
 export default Questions;
-

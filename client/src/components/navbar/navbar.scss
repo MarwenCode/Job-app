@@ -5,6 +5,10 @@
     padding: 20px 0;
     border-bottom: 1px solid #c2baba;
     margin-bottom: 60px;
+    // background-color: white;
+    // width: 120%;
+    // margin-right: 150px;
+    color: rgb(59, 160, 243);
     
 
   
@@ -24,10 +28,10 @@
     }
     .logout{
         padding: 10px 20px;
-        border: 1px solid #000;
+        // border: 1px solid #000;
         border-radius: 5px;
-        background: #000;
-        color: #fff;
+        // background: #000;
+        color: rgb(54, 49, 49);
         font-size: 16px;
         font-weight: 700;
         cursor: pointer;
@@ -43,10 +47,11 @@
     }
     .forum{
         padding: 10px 20px;
-        border: 1px solid #000;
+        // border: 1px solid #000;
         border-radius: 5px;
-        background: #000;
-        color: #fff;
+        // background: #000;
+        // color: #fff;
+        color: rgb(54, 49, 49);
         font-size: 16px;
         font-weight: 700;
         cursor: pointer;

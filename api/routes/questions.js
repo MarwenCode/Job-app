@@ -100,14 +100,6 @@ questionRoute.get("/", async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
   export default questionRoute;
 
 

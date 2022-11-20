@@ -70,6 +70,7 @@ const Profile = () => {
       const res = axios.post("/review/" + path, newReview);
       setReview(res.data);
       console.log(res);
+      window.location.replace(`/dev/${dev._id}`);
 
       console.log(res.data);
       setReviewtMode(false);

@@ -1,262 +1,213 @@
 .question {
-    background-color: rgb(98, 104, 104);
-    border-bottom: 1px solid grey;
-    min-height: 450px;
+  background-color: rgba(255, 255, 255, 0.658);
+  // background-color: rgb(28, 27, 27);
+  border-bottom: 1px solid grey;
+  min-height: 450px;
+  // color: rgb(59, 160, 243);;
+  color: rgb(23, 22, 22);
 
-    .top{
-        display: flex;
-        margin:10px 10px;
-        align-items: center;
-        justify-content: flex-start;
+  .top {
+    display: flex;
+    margin: 10px 10px;
+    align-items: center;
+    justify-content: flex-start;
 
-        .name{
-            margin-top: 5px;
-        }
-
-
-        .img{
-            width: 70px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 7px;
-            border-radius: 30px;
-            margin: 10px 10px;
-        }
-
-
-
+    .name {
+      margin-top: 5px;
     }
 
-    .down {
-        background-color: blanchedalmond;
-        margin: 10px 10px;
-       min-height: 100px;
-        border-radius: 10px;
-        display: flex;
-        align-items:flex-start;
-       
+    .img {
+      width: 70px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 7px;
+      border-radius: 30px;
+      margin: 10px 10px;
+    }
+  }
 
-        .text {
-            text-align: start;
-            // margin-left: -40px;
-            padding: 10px;
-          
-         
-         
+  .down {
+    background-color: rgb(208, 213, 216);
+    margin: 10px 10px;
+    height: 50px;
+    // height: 180px;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
 
-
-        }
-
-        .inputEdit{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            .editquestion{
-                resize: none;
-                width: 400px;
-                border-radius: 5px;
-                overflow: hidden;
-                min-height: 100px;
-                max-height: 150px;
-                // margin-right: 650px;
-                margin-top: 20px;
-                margin-right: -210px;
-               
-            }
-            .editquestionBtn{
-                height: 40px;
-                margin-left: -70px;
-                margin-top: 180px;
-                margin-bottom: 10px;
-              
-
-
-                padding: 10px 20px;
-                border: 1px solid #000;
-                border-radius: 5px;
-                background: #000;
-                color: #fff;
-                font-size: 16px;
-                font-weight: 700;
-                cursor: pointer;
-                text-align: center;
-                appearance: button;
-               
-               
-            }
-    
-
-
-
-        }
-     
-
-
-
-
-
-        .deleteQuestion{
-            margin-top: 8px;
-            // margin-bottom: 80px;
-            width: 40px;
-            height: 20px;
-            cursor: pointer;
-        }
-        .editQuestion{
-            margin-top: 8px;
-            margin-bottom: 80px;
-            width: 40px;
-            height: 20px;
-            cursor: pointer;
-
-        }
-
+    .text {
+      text-align: start;
+      // margin-left: -40px;
+      padding: 10px;
     }
 
-    .answers {
-        // background-color: rgb(196, 196, 181);
-        margin: 30px 10px;
-        // height: 70px;
-        border-radius: 10px;
-        // display: flex;
-        padding: 10px;
-        // margin-left: -200px;
-
-        .blocAnswer{
-            background-color: azure;
-            width: 100%;
-            min-height: 150px;
-            border-radius: 20px;
-          
-           
-
-            .imgName{
-                margin-top: 20px;
-                margin-left: 200px;
-                display: flex;
-                align-items: flex-start;
-                
-               
+    .inputEdit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
     
-    
-                .answerImg {
-                    width: 50px;
-                    height: 50px;
-                    object-fit: cover;
-                    border-radius: 7px;
-                    border-radius: 30px;
-                    // margin: 10px 10px;
-                    margin-left: -160px;
-                    margin-top: 10px;
-                    border-radius: 20px;
-                  
-        
-        
-                }
-    
-                .answerName {
-                   margin-left: 20px;
-                   align-items: center;
-                   margin-top: 30px;
-                }
 
-                .deleteAnswer{
-                    margin-left: 20px;
-                    align-items: center;
-                    margin-top: 30px;
+      .editquestion {
+        resize: none;
+        width: 400px;
+        border-radius: 5px;
+        overflow: hidden;
+        // min-height: 100px;
+        // max-height: 150px;
+        // margin-right: 650px;
+        margin-top: 40px;
+        margin-right: -210px;
+      }
+      .editquestionBtn {
+        height: 40px;
+        margin-left: -70px;
+        margin-top: 180px;
+        margin-bottom: 10px;
 
-                }
-                .editAnswer{
-                    margin-left: 20px;
-                    align-items: center;
-                    margin-top: 30px;
-
-                }
-    
-                
-    
-    
-            }
-
-            .answerText{
-                text-align: start;
-                margin: 20px;
-            }
-
-           
-    
-           
-         
-    
-        
-
-
-
-
-
-
-        }
-       
-
-
-       
-
-    }
-
-    .editAnswer {
-        background-color: rgb(197, 231, 231);
+        padding: 10px 20px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        background: #000;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
         cursor: pointer;
-
-        .title{
-            font-size: 3rem;
-            font-weight: 900;
-        }
-    
-        .addIcon{
-            margin-left: 20px;
-        
-        }
-
-        .AddAnswer {
-            display: flex;
-
-        }
-        .reply {
-            padding: 10px 10px;
-            // border: 1px solid #000;
-            border-radius: 5px;
-            background: #000;
-            color: #fff;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            text-align: center;
-            appearance: button;
-            align-items: center;
-            justify-content: center;
-            margin-right: -200px;
-            margin-bottom: 20px;
-           
-
-        }
-        .input {
-            resize: none;
-            width: 400px;
-            border-radius: 5px;
-            overflow: hidden;
-            min-height: 100px;
-            max-height: 150px;
-            // margin-right: 650px;
-            margin-top: 50px;
-            // margin-right: -200px;
-            margin-bottom: 100px;
-
-        }
-
+        text-align: center;
+        appearance: button;
+      }
     }
 
-   
+    .deleteQuestion {
+      margin-top: 8px;
+      // margin-bottom: 80px;
+      width: 40px;
+      height: 20px;
+      cursor: pointer;
+    }
+    .editQuestion {
+      margin-top: 8px;
+      margin-bottom: 80px;
+      width: 40px;
+      height: 20px;
+      cursor: pointer;
+    }
+  }
 
+  .answers {
+    // background-color: rgb(196, 196, 181);
+    margin: 30px 10px;
+    // height: 70px;
+    border-radius: 10px;
+    // display: flex;
+    padding: 10px;
+    // margin-left: -200px;
+
+    .blocAnswer {
+      // background-color: azure;
+      // background-color: rgb(233, 239, 234);
+      width: 100%;
+      // min-height: 150px;
+      height: 140px;
+      border-radius: 20px;
+      border: 1px solid;
+      margin-top: 20px;
+
+      .imgName {
+        margin-top: 20px;
+        margin-left: 200px;
+        display: flex;
+        align-items: flex-start;
+
+        .answerImg {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border-radius: 7px;
+          border-radius: 30px;
+          // margin: 10px 10px;
+          margin-left: -160px;
+          margin-top: 10px;
+          border-radius: 20px;
+        }
+
+        .answerName {
+          margin-left: 20px;
+          align-items: center;
+          margin-top: 30px;
+        }
+
+        .deleteAnswer {
+          margin-left: 20px;
+          align-items: center;
+          margin-top: 30px;
+          font-size: 20px;
+          background-color: white;
+          color:black;
+        }
+        .editAnswer {
+          margin-left: 20px;
+          align-items: center;
+          margin-top: 30px;
+          font-size: 20px;
+          background-color: white;
+          color:black;
+        }
+      }
+
+      .answerText {
+        text-align: start;
+        margin: 20px;
+        background-color: rgb(247, 248, 248);
+      }
+    }
+  }
+
+  .editAnswer {
+    background-color: #000;
+    color: rgb(59, 160, 243);
+    cursor: pointer;
+
+    .title {
+      font-size: 3rem;
+      font-weight: 900;
    
+    }
+
+    .addIcon {
+      margin-left: 20px;
+    }
+
+    .AddAnswer {
+      display: flex;
+    }
+    .reply {
+      padding: 10px 10px;
+      // border: 1px solid #000;
+      border-radius: 5px;
+      background: #000;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      appearance: button;
+      align-items: center;
+      justify-content: center;
+      margin-right: -200px;
+      margin-bottom: 20px;
+    }
+    .input {
+      resize: none;
+      width: 400px;
+      border-radius: 5px;
+      overflow: hidden;
+      min-height: 100px;
+      max-height: 150px;
+      // margin-right: 650px;
+      margin-top: 50px;
+      // margin-right: -200px;
+      margin-bottom: 100px;
+    }
+  }
 }

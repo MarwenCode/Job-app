@@ -5,6 +5,7 @@
     // flex-grow: initial;
     // margin: 20px;
     width: 100%;
+    // background-color: white;
 
 
 
@@ -17,6 +18,8 @@
             .list{
                 list-style: none;
                 display: flex;
+                font-size: large;
+                color: rgb(59, 160, 243);
         
                 .inputTech{
                     margin-right: 10px;
