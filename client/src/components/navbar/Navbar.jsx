@@ -30,23 +30,23 @@ const Navbar = () => {
     {user ? (
         <>
         <Link to="/forum" className='link'>
-        <button className='forum'>Forum</button>
+        <span className='item'>Forum</span>
         
         </Link>
         <Link to="/Jobs" className='link'>
-        <button className='forum'>Jobs</button>
+        <span className='item'>Jobs</span>
         
         </Link>
         <Link to="/editProfile" className='link'>
-        <button className='forum'>Profile</button>
+        <span className='item'>Profile</span>
         
         </Link>
 
          
-         <button className='logout'   onClick={handleLogout}>Logout
+         <span className='logout'   onClick={handleLogout}>Logout
         <FaSignOutAlt className='signoutIcon'/>
 
-        </button>
+        </span>
         
         </>
        

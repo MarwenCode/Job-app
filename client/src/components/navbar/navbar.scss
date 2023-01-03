@@ -45,7 +45,7 @@
             margin-left: 10px;
         }
     }
-    .forum{
+    .item{
         padding: 10px 20px;
         // border: 1px solid #000;
         border-radius: 5px;
@@ -60,7 +60,31 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+
     }
+    .item::before{
+        content:"";
+        position: absolute;
+        background-color: rgb(59, 160, 243);
+        // border-bottom: 2px solid black;
+        width: 0;
+        height: 3px;
+        // bottom: -10px;
+        justify-content: center;
+        left: 150;
+        transition: 0.5 ease;
+   
+    }
+    .item:hover:before{
+        width: 5%;
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+
+  
+
     .item {
         list-style: none;
         display: flex;
