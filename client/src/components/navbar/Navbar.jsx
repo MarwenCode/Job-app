@@ -1,99 +1,70 @@
-import React from 'react';
-import "./navbar.scss"
-import { Link, useNavigate } from 'react-router-dom';
-import { FaSignInAlt, FaSignOutAlt, FaUser} from 'react-icons/fa';
-import { AppContext } from '../../context/context';
-import { useContext } from 'react';
+import React from "react";
+import "./navbar.scss";
+import { Link, useNavigate } from "react-router-dom";
+import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
+import { AppContext } from "../../context/context";
+import { useContext } from "react";
 
 const Navbar = () => {
-    const {user, dispatch} = useContext(AppContext)
-   
+  const { user, dispatch } = useContext(AppContext);
 
-    const Navigate = useNavigate();
+  const Navigate = useNavigate();
 
-    const handleLogout = () => {
-        dispatch({ type: "LOGOUT" });
-    
-        Navigate("/login");
-      };
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
 
-
+    Navigate("/login");
+  };
 
   return (
-    <div className='navbar'>
-    <div className="title" >
-        <Link to='/'  className="link">Job App </Link>
-        <span className='version'>for devs</span>
-    </div>
-  
-  
-    {user ? (
+    <div className="navbar">
+      <div className="title">
+        <Link to="/" className="link">
+          Job App{" "}
+        </Link>
+        <span className="version">for devs</span>
+      </div>
+
+      {user ? (
         <>
-        <Link to="/forum" className='link'>
-        <span className='item'>Forum</span>
-        
-        </Link>
-        <Link to="/Jobs" className='link'>
-        <span className='item'>Jobs</span>
-        
-        </Link>
-        <Link to="/editProfile" className='link'>
-        <span className='item'>Profile</span>
-        
-        </Link>
+          <Link to="/forum" className="link">
+            <span className="item">Forum</span>
+          </Link>
+          <Link to="/Jobs" className="link">
+            <span className="item">Jobs</span>
+          </Link>
+          <Link to="/editProfile" className="link">
+            <span className="item">Profile</span>
+          </Link>
 
-         
-         <span className='logout'   onClick={handleLogout}>Logout
-        <FaSignOutAlt className='signoutIcon'/>
-
-        </span>
-        
+          <span className="logout" onClick={handleLogout}>
+            Logout
+            <FaSignOutAlt className="signoutIcon" />
+          </span>
         </>
-       
-
-
-
-
-    ) :
-
-
-    (
+      ) : (
         <>
-        
-        <ul className='item'>
-        <li>
-            <Link to='login'  className="link">
+          <ul className="sign">
+            <li className="sign">
+              <Link to="login" className="link">
                 <FaSignInAlt /> Login
-            </Link>
-        </li>
-        <li>
-            <Link to='/register'  className="link">
+              </Link>
+            </li>
+            <li className="sign">
+              <Link to="/register" className="link">
                 <FaUser /> register
-            </Link>
-        </li>
-    </ul>
-        
-        
-        
+              </Link>
+            </li>
+          </ul>
         </>
-  
-   
+      )}
 
-
-    )
-
-
-
-    }
-
-    {/* {user &&    <button className='logout'>test
+      {/* {user &&    <button className='logout'>test
         <FaSignOutAlt className='signoutIcon'/>
 
         </button>} */}
+    </div>
+  );
+};
 
-
-</div>
-  )
-}
-
-export default Navbar
+export default Navbar;

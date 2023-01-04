@@ -1,52 +1,49 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {BsLinkedin} from 'react-icons/bs'
+import {MdEmail} from 'react-icons/md'
+import {GrDownload} from 'react-icons/gr'
+import { Link } from "react-router-dom";
 
 import "./dev.scss";
 
 const Dev = ({ dev }) => {
   const profilepic = "http://localhost:8000/images/";
- 
+
   return (
     <Link to={`/dev/${dev._id}`} className="link">
+      <div className="dev">
+        <div className="top">
+          <img
+            className="img"
+            // src="/images/image1.jpg" alt=""
 
-     <div className="dev">
-      <div className="top">
-        <div className="right">
-          <img 
-          className="img" 
-          // src="/images/image1.jpg" alt="" 
-
-          src={
-            dev.profilePicture
-              ? profilepic + dev.profilePicture
-              : 
-              "/images/noAvatar.png"
-          }
-          alt=""
-
-
-          
+            src={
+              dev.profilePicture
+                ? profilepic + dev.profilePicture
+                : "/images/noAvatar.png"
+            }
+            alt=""
           />
+          <span className="item">{dev.username}</span>
+          <span className="item">mail: {dev.email}</span>
+          <span className="item">language: <span>{dev.technology}</span> </span>
         </div>
 
-        <div className="left">
-          <span className="username">{dev.username}</span>
-          <span className="email">{dev.email}</span>
-          <span className="tech">{dev.technology}</span>
+        <div className="center">
+          <p className="desc"> {dev.description}</p>
         </div>
 
-    </div>
-
-      <div className="down">
-        <p className="desc"> {dev.description}</p>
+        <div className="down">
+          <ul>
+            <li> <BsLinkedin style={{fontSize:"18px"}} /></li>
+            <li> <MdEmail  style={{fontSize:"20px"}}/></li>
+            <li> <GrDownload  style={{fontSize:"20px"}}/> CV</li>
+            
+          </ul>
+        </div>
       </div>
-    </div>
-    
     </Link>
-
-    
   );
 };
 
 export default Dev;
-
