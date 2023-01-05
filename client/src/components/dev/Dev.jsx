@@ -37,7 +37,7 @@ const Dev = ({ dev }) => {
           <ul>
             <li> <BsLinkedin style={{fontSize:"18px"}} /></li>
             <li> <MdEmail  style={{fontSize:"20px"}}/></li>
-            <li> <GrDownload  style={{fontSize:"20px"}}/> CV</li>
+            <li className="cv"> <abbr title="clic here to download CV"><GrDownload  style={{fontSize:"20px"}}/></abbr> </li>
             
           </ul>
         </div>

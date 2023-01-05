@@ -9,14 +9,16 @@
     .top{
        display: flex;
        height: 200px;
+    //    width: 350px;
+    
 
         .right{
             flex:5;
             // background-color: aqua;
 
             .img{
-                width: 200px;
-                height: 150px;
+                width: 100px;
+                // height: 150px;
                 object-fit: cover;
                 border-radius: 7px;
                 border-radius: 30px;
@@ -25,6 +27,8 @@
 
             .rating{
                 margin-bottom: 50px;
+                margin-left: 130px;
+                width: 150px;
             }
 
 
@@ -36,9 +40,10 @@
             // display: flex;
             flex-direction: column;
             margin: 5px 40px;
-            border-left: 1px grey solid;
-            background: rgb(109, 102, 102);
+            border-left: 1px rgb(212, 199, 199) solid;
+            background: linear-gradient(#84aec9, #efeff7);
             border-radius: 50px;
+           
 
             .email{
                 margin: 5px 5px;
@@ -50,7 +55,7 @@
                 // border: 1px solid #000;
                 border-radius: 5px;
                 // background: rgb(109, 102, 102);
-                color: #fff;
+                color: black;
                 font-size: 16px;
                 font-weight: 700;
                 // cursor: pointer;
@@ -71,7 +76,8 @@
                 // border: 1px solid #000;
                 border-radius: 5px;
                 // background: rgb(109, 102, 102);
-                color: #fff;
+                // color: #fff;
+                color: black;
                 font-size: 16px;
                 font-weight: 700;
                 // cursor: pointer;
@@ -95,7 +101,7 @@
                 // border: 1px solid #000;
                 border-radius: 5px;
                 // background: rgb(109, 102, 102);
-                color: #fff;
+                color: black;
                 font-size: 16px;
                 font-weight: 700;
                 // cursor: pointer;
@@ -112,7 +118,7 @@
                 border: 1px solid #000;
                 border-radius: 5px;
                 background: #000;
-                color: #fff;
+                color: rgb(59, 160, 243);
                 font-size: 16px;
                 font-weight: 700;
                 cursor: pointer;
@@ -120,7 +126,7 @@
                 appearance: button;
                 align-items: center;
                 justify-content: center;
-                margin : 50px 120px;
+                margin : 50px 190px;
             }
 
 
@@ -185,7 +191,7 @@
                 .img{
                     width:40px;
                     height: 40px;
-                    border-radius: 10px;
+                    border-radius: 20px;
                 }
                 
             
