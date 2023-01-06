@@ -81,7 +81,6 @@ const Profile = () => {
     addReview();
   };
 
-  
   //delete a review
   const deleteReview = async (reviewId) => {
     console.log(reviewId);
@@ -99,12 +98,14 @@ const Profile = () => {
     <div className="profile">
       <div className="top">
         <div className="right">
-          <img className="img"   src={
-            dev.profilePicture
-              ? profilepic + dev.profilePicture
-              : 
-              "/images/noAvatar.png"
-          }/>
+          <img
+            className="img"
+            src={
+              dev.profilePicture
+                ? profilepic + dev.profilePicture
+                : "/images/noAvatar.png"
+            }
+          />
           <Rating className="rating" />
         </div>
         <div className="left">
@@ -144,7 +145,6 @@ const Profile = () => {
 
                 <span className="user"> {review.username} </span>
                 <span className="date">
-                  {" "}
                   {new Date(review.createdAt).toDateString()}
                 </span>
                 <AiFillDelete
@@ -166,23 +166,36 @@ const Profile = () => {
           <span className="title"> write your review</span>
 
           {reviewMode && (
-            <button className="reviewBtn" onClick={(e) => addReview(e)}>
-              Subbmit
+            <>
+               <button className="cancel" onClick={() => setReviewtMode(false)}>
+              X
             </button>
+            </>
           )}
 
-          <AiFillEdit
-            className="addreviewIcon"
-            onClick={() => setReviewtMode((prev) => !prev)}
-          />
+          {!reviewMode && (
+            <AiFillEdit
+              className="addreviewIcon"
+              onClick={() => setReviewtMode((prev) => !prev)}
+            />
+          )}
         </div>
 
         {reviewMode && (
-          <textarea
-            className="input"
-            value={review}
-            onChange={(e) => setReview(e.target.value)}
-          />
+          <>
+            <textarea
+              className="input"
+              value={review}
+              onChange={(e) => setReview(e.target.value)}
+            />
+            <div >
+            <button className="reviewBtn" onClick={(e) => addReview(e)}>
+                Subbmit
+              </button>
+
+            </div>
+         
+          </>
         )}
       </div>
     </div>

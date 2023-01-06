@@ -9,7 +9,7 @@
     .top{
        display: flex;
        height: 200px;
-    //    width: 350px;
+       width: 100%;
     
 
         .right{
@@ -36,6 +36,8 @@
 
         .left{
             flex:7;
+           width: 60px;
+          
             // background-color: blue;
             // display: flex;
             flex-direction: column;
@@ -135,14 +137,17 @@
     }
 
     .description{
-        background: rgb(109, 102, 102);
-        height: 60px;
+        border-left: 1px rgb(212, 199, 199) solid;
+        background: linear-gradient(#84aec9, #efeff7);
+        height: 150px;
+        width: 100%;
         margin-top: 40px;
         padding: 10px;
         // flex-direction: column;
         border-radius: 40px;
         margin-top: 100px;
-   
+        
+       
       
        
 
@@ -157,7 +162,7 @@
             border-radius: 5px;
             margin-top: 20px;
             width: 350px;
-            color: #fff;
+            color: black;
             
      
             
@@ -177,11 +182,11 @@
 
         .review{
             width: 80%;
-            background: rgb(131, 127, 127);
+            background: rgb(245, 240, 240);
             margin-left: 80px;
             margin-top: 10px;
             border-radius: 10px;
-            color: #fff;
+            color:black;
             height: 100px;
 
             .top{
@@ -202,7 +207,7 @@
                 }
                 .date{
                     margin: 5px 5px;
-                    color:rgb(212, 198, 198)
+                    color:rgb(94, 91, 91)
                 }
 
                 .deleteReviewIcon{
@@ -224,11 +229,12 @@
         
                 .text{
                     // margin-bottom: 100px;
-                    margin-left: -380px;
+                    margin-left: 10px;
                     margin-top: -150px;
                     font-size: small;
                     // width:480px;
                     margin-top: -150px;
+                    text-align: start;
                     
                    
                   
@@ -254,6 +260,10 @@
 
         .item{
             margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
 
             .title {
                 justify-content:space-around ;
@@ -263,22 +273,14 @@
                 font-weight: 100;
          
             }
-            .reviewBtn{
-                padding: 10px 10px;
-                // border: 1px solid #000;
-                border-radius: 5px;
-                background: #000;
-                color: #fff;
-                font-size: 16px;
-                font-weight: 700;
-                cursor: pointer;
-                text-align: center;
-                appearance: button;
-                align-items: center;
-                justify-content: center;
-               
+
+            .cancel {
+                background-color: black;
+                color: rgb(59, 160, 243);
+                height: 20px;
                
             }
+        
 
             .addreviewIcon{
                 width: 100px;
@@ -299,6 +301,23 @@
             overflow: hidden;
             min-height: 100px;
             max-height: 250px;
+        }
+
+        .reviewBtn{
+            padding: 10px 10px;
+            // border: 1px solid #000;
+            border-radius: 5px;
+            background: #000;
+            color: rgb(59, 160, 243);
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            appearance: button;
+            align-items: center;
+            justify-content: center;
+           
+           
         }
        
 
