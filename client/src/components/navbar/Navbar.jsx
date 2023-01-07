@@ -20,9 +20,10 @@ const Navbar = () => {
     <div className="navbar">
       <div className="title">
         <Link to="/" className="link">
-          Job App{" "}
+          {/* Job App */}
+          <img src="/images/job-logo.png" style={{width:"150px"}}/>
         </Link>
-        <span className="version">for devs</span>
+        {/* <span className="version">for devs</span> */}
       </div>
 
       {user ? (
