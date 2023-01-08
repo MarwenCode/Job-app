@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
+import { MdExpandMore } from "react-icons/md";
 import "./question.scss";
 import { AppContext } from "../../context/context";
 import axios from "axios";
@@ -15,6 +16,7 @@ const Question = ({ question }) => {
   const [answerMode, setAnswerMode] = useState(false);
   const [editQuestion, setEditQuestion] = useState("");
   const [editQuestionMode, setEditQuestionMode] = useState(false);
+  const [details, setDetails] = useState(false);
 
   const params = useParams();
   console.log(params);
@@ -135,6 +137,7 @@ const Question = ({ question }) => {
             "/images/noAvatar.png"
           }
         />
+
         <span className="name">{question.username}</span>
       </div>
       <div className="down">
@@ -164,40 +167,56 @@ const Question = ({ question }) => {
           onClick={() => setEditQuestionMode((prev) => !prev)}
         />
       </div>
-      <div className="answers">
-        {question.answers.map((answer) => (
-          <div className="blocAnswer">
-            <div className="imgName">
-              <img src="" className="answerImg" />
-              <span className="answerName">{answer.username} </span>
-
-              <AiFillDelete
-                className="deleteAnswer"
-                onClick={() => deleteAnswer(answer._id)}
-              />
-              <AiFillEdit
-                className="editAnswer"
-                onClick={() => setEditAnswerMode((prev) => !prev)}
-              />
-            </div>
-            <p className="answerText">{answer.text}</p>
-          </div>
-        ))}
-        {editAnswerMode && (
-          <>
-            <form className="edit">
-              <textarea
-                className=""
-                value={editAnswer}
-                onChange={(e) => setEditAnswer(e.target.value)}
-              />
-            </form>
-            <button className="edited" onClick={(e) => editRespond(e)}>
-              edit
-            </button>
-          </>
-        )}
+      <div className="showdetails" onClick={() => setDetails(!details)}>
+        <summary>
+          {" "}
+          <MdExpandMore /> show answers...{" "}
+        </summary>
       </div>
+      {details && (
+          <div className="answers">
+          {question.answers.map((answer) => (
+            <div className="blocAnswer">
+              <div className="imgName">
+                <img src="" className="answerImg" />
+                <span className="answerName">{answer.username} </span>
+  
+                <AiFillDelete
+                  className="deleteAnswer"
+                  onClick={() => deleteAnswer(answer._id)}
+                />
+                <AiFillEdit
+                  className="editAnswer"
+                  onClick={() => setEditAnswerMode((prev) => !prev)}
+                />
+              </div>
+  
+              <p className="answerText">{answer.text}</p>
+            </div>
+          ))}
+          {editAnswerMode && (
+            <>
+              <form className="edit">
+                <textarea
+                  className=""
+                  value={editAnswer}
+                  onChange={(e) => setEditAnswer(e.target.value)}
+                />
+              </form>
+              <button className="edited" onClick={(e) => editRespond(e)}>
+                edit
+              </button>
+            </>
+          )}
+        </div>
+
+
+
+
+
+      )}
+    
+
       <div className="editAnswer">
         <span className="tite">Add an answer</span>
 

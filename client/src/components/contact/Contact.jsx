@@ -46,7 +46,7 @@ const Contact = () => {
   return (
 
     <div className="contact">
-      <div className="profileSidebar">
+      {/* <div className="profileSidebar">
       <div className="top">
         <div className="right">
           <img className="img" src="" alt="" />
@@ -61,7 +61,7 @@ const Contact = () => {
       </div>
 
 
-      </div>
+      </div> */}
       <div className="background">
   <div className="container">
     <div className="screen">
@@ -77,22 +77,22 @@ const Contact = () => {
       <div className="screen-body">
         <div className="screen-body-item left">
           <div className="app-title">
-            <span>CONTACT</span>
-            <span>US</span>
+            <span>CONTACT :  <span className="username">{dev.username}</span></span>
+            
           </div>
           <div className="app-contact"></div>
         </div>
         <div className="screen-body-item">
           <div class="app-form">
             <div className="app-form-group">
-              <input className="app-form-control" placeholder="NAME" 
+              <input className="app-form-control" placeholder="name" 
               value={name}
                onChange={(e) => setName(e.target.value)}
               
               />
             </div>
             <div className="app-form-group">
-              <input className="app-form-control" placeholder="EMAIL"
+              <input className="app-form-control" placeholder="email"
               value={email}
 
              onChange={(e) => setEmail(e.target.value)}
@@ -102,7 +102,7 @@ const Contact = () => {
             </div>
              <div/>
              <div className="app-form-group message">
-              <textarea className="app-form-control" placeholder="MESSAGE"
+              <textarea className="app-form-control" placeholder="message"
               value={message}
                 onChange={(e) => setMessage(e.target.value)}
               
