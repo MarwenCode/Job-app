@@ -145,11 +145,15 @@ const Question = ({ question }) => {
 
         {editQuestionMode && (
           <div className="inputEdit">
-            <textarea
-              className="editquestion"
-              value={editQuestion}
-              onChange={(e) => setEditQuestion(e.target.value)}
-            />
+            <button className="cancel" onClick={() => setEditQuestionMode(false)}>X</button>
+
+            <div className="inputForm">
+              <textarea
+                className="editquestion"
+                value={editQuestion}
+                onChange={(e) => setEditQuestion(e.target.value)}
+              />
+            </div>
             <button
               className="editquestionBtn"
               onClick={(e) => editeQuestion(e)}>
@@ -219,13 +223,12 @@ const Question = ({ question }) => {
 
         {answerMode && (
           <form className="addAnswer">
-         
             <textarea
               className="input"
               value={addAnswer}
               onChange={(e) => setAddAnswer(e.target.value)}
             />
-               <button className="reply" onClick={(e) => Reply(e)}>
+            <button className="reply" onClick={(e) => Reply(e)}>
               reply
             </button>
           </form>

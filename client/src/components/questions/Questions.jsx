@@ -17,7 +17,9 @@ const Questions = () => {
     const getQuestions = async () => {
       const res = await axios.get("/question");
       console.log(res);
-      setQuestions(res.data);
+      setQuestions(res.data.sort((p1, p2) => {
+        return new Date(p2.createdAt) - new Date(p1.createdAt)
+      }));
     };
 
     getQuestions();

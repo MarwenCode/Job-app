@@ -52,40 +52,96 @@
   
 
     .inputEdit {
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+      // z-index: 1;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 50%;
+      left: 50%;
       display: flex;
+      z-index: 1;
       align-items: center;
       justify-content: center;
-      z-index: 1;
+      background-color: rgba(197, 197, 197, 0.568);
+      transform: translate(-50%, -50%);
+
+      .cancel {
+        // margin-left: 60px;
+        // margin-bottom: -50px;
+        // margin-right: 350px;
+        margin-bottom: 200px;
+        padding: 5px 10px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        background: #000;
+        color: rgb(59, 160, 243);
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        text-align: center;
+        appearance: button;
+     
+       
+       
+      }
+
     
 
-      .editquestion {
-        resize: none;
-        width: 400px;
-        border-radius: 5px;
-        overflow: hidden;
-        // min-height: 100px;
-        // max-height: 150px;
-        // margin-right: 650px;
-        margin-top: 40px;
-        margin-right: -210px;
-      }
       .editquestionBtn {
         height: 40px;
-        margin-left: -70px;
-        margin-top: 180px;
+        transform: translate(-50%, -50%);
+      
+        margin-top: 250px;
         margin-bottom: 10px;
+        margin-left: -350px;
+        // margin-bottom: 150px;
 
         padding: 10px 20px;
         border: 1px solid #000;
         border-radius: 5px;
         background: #000;
-        color: #fff;
+        color: rgb(59, 160, 243);
         font-size: 16px;
         font-weight: 700;
         cursor: pointer;
         text-align: center;
         appearance: button;
       }
+
+      .inputForm {
+        background-color: white;
+        width: 600px;
+        height: 150px;
+        
+      .editquestion {
+        resize: none;
+        width: 400px;
+        // height: 150px;
+        border-radius: 5px;
+        overflow: hidden;
+        // min-height: 100px;
+        // max-height: 150px;
+        // margin-right: 650px;
+        // margin-top: 40px;
+        margin-right: 0px;
+        margin-top: 50px;
+        // margin-right: -210px;
+        // margin-bottom:300px;
+        padding: 20px;
+     
+      }
+     
+
+      
+    
+   
+      }
+    
+    
+
     }
 
     .deleteQuestion {
@@ -185,6 +241,14 @@
         background-color: rgb(247, 248, 248);
       }
     }
+
+    .edited{
+
+    }
+
+
+
+
   }
 
   .editAnswer {
