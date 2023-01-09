@@ -169,18 +169,17 @@ const Question = ({ question }) => {
       </div>
       <div className="showdetails" onClick={() => setDetails(!details)}>
         <summary>
-          {" "}
           <MdExpandMore /> show answers...{" "}
         </summary>
       </div>
       {details && (
-          <div className="answers">
+        <div className="answers">
           {question.answers.map((answer) => (
             <div className="blocAnswer">
               <div className="imgName">
                 <img src="" className="answerImg" />
                 <span className="answerName">{answer.username} </span>
-  
+
                 <AiFillDelete
                   className="deleteAnswer"
                   onClick={() => deleteAnswer(answer._id)}
@@ -190,7 +189,7 @@ const Question = ({ question }) => {
                   onClick={() => setEditAnswerMode((prev) => !prev)}
                 />
               </div>
-  
+
               <p className="answerText">{answer.text}</p>
             </div>
           ))}
@@ -209,32 +208,26 @@ const Question = ({ question }) => {
             </>
           )}
         </div>
-
-
-
-
-
       )}
-    
 
       <div className="editAnswer">
-        <span className="tite">Add an answer</span>
-
-        <AiFillEdit
-          className="addIcon"
-          onClick={() => setAnswerMode((prev) => !prev)}
-        />
+        <div className="div" onClick={() => setAnswerMode((prev) => !prev)}>
+          <button className="tite">
+            Add an answer <AiFillEdit className="addIcon" />
+          </button>
+        </div>
 
         {answerMode && (
           <form className="addAnswer">
-            <button className="reply" onClick={(e) => Reply(e)}>
-              reply
-            </button>
+         
             <textarea
               className="input"
               value={addAnswer}
               onChange={(e) => setAddAnswer(e.target.value)}
             />
+               <button className="reply" onClick={(e) => Reply(e)}>
+              reply
+            </button>
           </form>
         )}
       </div>

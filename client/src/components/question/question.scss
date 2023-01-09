@@ -1,7 +1,7 @@
 .question {
   // background-color: white;
   // background-color: rgb(28, 27, 27);
-  border-bottom: 1px solid grey;
+  // border-bottom: 1px solid grey;
   // min-height: 450px;
   // color: rgb(59, 160, 243);;
   color: rgb(23, 22, 22);
@@ -102,7 +102,14 @@
       height: 20px;
       cursor: pointer;
     }
+
+   
   
+  }
+  .showdetails{
+    margin-left: 680px;
+    cursor: pointer;
+    margin-bottom: 10px;
   }
 
   .answers {
@@ -156,14 +163,20 @@
           background-color: white;
           color:black;
         }
-        .editAnswer {
-          margin-left: 20px;
-          align-items: center;
-          margin-top: 30px;
-          font-size: 20px;
-          background-color: white;
-          color:black;
-        }
+        // .editAnswer {
+        //   margin-left: 20px;
+        //   align-items: center;
+        //   margin-top: 30px;
+        //   font-size: 20px;
+        //   background-color: white;
+        //   color:black;
+
+        //   span {
+          
+        //   }
+
+
+        // }
       }
 
       .answerText {
@@ -175,13 +188,32 @@
   }
 
   .editAnswer {
-    background-color: #000;
+    // background-color: #000; 
     color: rgb(59, 160, 243);
     cursor: pointer;
+    margin-top: -30px;
+    margin-left: -550px;
 
-    .title {
+    button {
       font-size: 3rem;
       font-weight: 900;
+      border: none;
+
+      padding: 10px 20px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      background: #000;
+      // color: #fff;
+      color: rgb(59, 160, 243);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      appearance: button;
+      // margin: 20px;
+      align-items: center;
+      justify-content: center;
+    
    
     }
 
@@ -191,6 +223,7 @@
 
     .AddAnswer {
       display: flex;
+      
     }
     .reply {
       padding: 10px 10px;
@@ -205,8 +238,10 @@
       appearance: button;
       align-items: center;
       justify-content: center;
-      margin-right: -200px;
-      margin-bottom: 20px;
+      // margin-right: -290px;
+      margin-bottom: -30px;
+      margin-left: 550px;
+     
     }
     .input {
       resize: none;
@@ -219,6 +254,12 @@
       margin-top: 50px;
       // margin-right: -200px;
       margin-bottom: 100px;
+      justify-content: center;
+      align-items: center;
+      // margin-right: -700px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      margin-left: 600px;
     }
   }
 }
