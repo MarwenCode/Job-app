@@ -42,11 +42,13 @@
     border-radius: 10px;
     display: flex;
     align-items: flex-start;
+    margin-bottom: 40px;
 
     .text {
       text-align: start;
       // margin-left: -40px;
       padding: 10px;
+      
     }
 
   
@@ -192,6 +194,7 @@
         margin-left: 200px;
         display: flex;
         align-items: flex-start;
+     
 
         .answerImg {
           width: 50px;
@@ -283,6 +286,7 @@
 
     .addIcon {
       margin-left: 20px;
+      
     }
 
     .AddAnswer {

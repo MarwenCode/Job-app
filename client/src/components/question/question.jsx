@@ -36,6 +36,8 @@ const Question = ({ question }) => {
   }, []);
 
   console.log(answer);
+  console.log(question);
+  console.log(answer);
 
   //add an answer
   const Reply = (e) => {
@@ -145,7 +147,11 @@ const Question = ({ question }) => {
 
         {editQuestionMode && (
           <div className="inputEdit">
-            <button className="cancel" onClick={() => setEditQuestionMode(false)}>X</button>
+            <button
+              className="cancel"
+              onClick={() => setEditQuestionMode(false)}>
+              X
+            </button>
 
             <div className="inputForm">
               <textarea
@@ -162,20 +168,30 @@ const Question = ({ question }) => {
           </div>
         )}
 
-        <AiFillDelete
-          className="deleteQuestion"
-          onClick={() => deleteQuestion(question._id)}
-        />
-        <AiFillEdit
-          className="editQuestion"
-          onClick={() => setEditQuestionMode((prev) => !prev)}
-        />
+        {question.userId === user._id && (
+          <>
+            <AiFillDelete
+              className="deleteQuestion"
+              onClick={() => deleteQuestion(question._id)}
+            />
+            <AiFillEdit
+              className="editQuestion"
+              onClick={() => setEditQuestionMode((prev) => !prev)}
+            />
+          </>
+        )}
       </div>
-      <div className="showdetails" onClick={() => setDetails(!details)}>
-        <summary>
-          <MdExpandMore /> show answers...{" "}
-        </summary>
-      </div>
+      {question.answers == "" ? (
+        // <p>there is no answers yet </p>
+        <></>
+      ) : (
+        <div className="showdetails" onClick={() => setDetails(!details)}>
+          <summary>
+            <MdExpandMore /> show answers...
+          </summary>
+        </div>
+      )}
+
       {details && (
         <div className="answers">
           {question.answers.map((answer) => (
@@ -183,15 +199,18 @@ const Question = ({ question }) => {
               <div className="imgName">
                 <img src="" className="answerImg" />
                 <span className="answerName">{answer.username} </span>
-
-                <AiFillDelete
-                  className="deleteAnswer"
-                  onClick={() => deleteAnswer(answer._id)}
-                />
-                <AiFillEdit
-                  className="editAnswer"
-                  onClick={() => setEditAnswerMode((prev) => !prev)}
-                />
+                {answer.userId === user._id && (
+                  <>
+                    <AiFillDelete
+                      className="deleteAnswer"
+                      onClick={() => deleteAnswer(answer._id)}
+                    />
+                    <AiFillEdit
+                      className="editAnswer"
+                      onClick={() => setEditAnswerMode((prev) => !prev)}
+                    />
+                  </>
+                )}
               </div>
 
               <p className="answerText">{answer.text}</p>
