@@ -1,98 +1,178 @@
-.job{
-    width: 100%;
-    margin: 30px 10px;
-    border-radius: 50px;
-    background-color: azure;
+// .job{
+//     width: 100%;
+//     margin: 30px 10px;
+//     border-radius: 50px;
+//     background-color: azure;
     
 
-    .top {
-        // background-color: aqua;
+//     .top {
+//         // background-color: aqua;
 
-    }
+//     }
 
-    .center {
-        // background-color: blueviolet;
-        height: 100px;
-        display: flex;
-        align-items: center;
-        margin-left: 10px;
+//     .center {
+//         // background-color: blueviolet;
+//         height: 100px;
+//         display: flex;
+//         align-items: center;
+//         margin-left: 10px;
 
-        .left{
+//         .left{
            
 
-            .compagny {
-                font-size: 2rem;
-                font-weight: 700;
+//             .compagny {
+//                 font-size: 2rem;
+//                 font-weight: 700;
 
-            }
+//             }
 
-            .location {
-                font-size: 1rem;
-                font-weight: 700;
+//             .location {
+//                 font-size: 1rem;
+//                 font-weight: 700;
 
               
 
  
-            }
-            .place{
-                width:30px;
+//             }
+//             .place{
+//                 width:30px;
               
-            }
-        }
+//             }
+//         }
 
-        .right {
-            margin-left: 650px;
-            align-items: center;
+//         .right {
+//             margin-left: 650px;
+//             align-items: center;
 
 
-            .type {
-                font-size: 1rem;
+//             .type {
+//                 font-size: 1rem;
                
                 
 
-            }
+//             }
 
-            .apply{
-                padding: 10px 20px;
-                border: 1px solid #000;
-                border-radius: 5px;
-                background: #000;
-                color: #fff;
-                font-size: 16px;
-                font-weight: 700;
-                cursor: pointer;
-                text-align: center;
-                appearance: button;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 30px;
-                margin-left: 10px;
-                margin-top: 20px;
+//             .apply{
+//                 padding: 10px 20px;
+//                 border: 1px solid #000;
+//                 border-radius: 5px;
+//                 background: #000;
+//                 color: #fff;
+//                 font-size: 16px;
+//                 font-weight: 700;
+//                 cursor: pointer;
+//                 text-align: center;
+//                 appearance: button;
+//                 display: flex;
+//                 align-items: center;
+//                 justify-content: center;
+//                 height: 30px;
+//                 margin-left: 10px;
+//                 margin-top: 20px;
 
-            }
+//             }
+//         }
+
+//     }
+
+//     .down{
+//         // background-color: chocolate;
+//         height: 350px;
+//         margin: 40px 40px;
+//        text-align: justify;
+
+//        .description{
+//         width: 750px;
+//         // border: 1px solid black;
+//         background:rgb(228, 225, 223);
+//         min-height: 150px;
+//         padding: 10px;
+//         border-radius: 20px;
+        
+//        }
+
+
+//     }
+
+
+// }
+
+
+.job {
+    display: flex;
+    margin: 40px;
+    
+
+
+    .partofJob {
+    flex: 5;
+    // background-color: aqua;
+  
+  
+    .top {
+        display: flex;
+        align-items: center;
+       
+
+        img {
+            width: 60px;
+
+        }
+
+        .title {
+            margin-left: 30px;
+
         }
 
     }
 
-    .down{
-        // background-color: chocolate;
-        height: 350px;
-        margin: 40px 40px;
-       text-align: justify;
+    .down {
+       
+        display: flex;
+        flex-direction: column;
+        margin-left: -100px;
+        .compagny {
+            font-size: large;
 
-       .description{
-        width: 750px;
-        // border: 1px solid black;
-        background:rgb(228, 225, 223);
-        min-height: 150px;
-        padding: 10px;
-        border-radius: 20px;
-        
-       }
+        }
+        .type {
+            font-weight: 200;
+
+        }
+        .location {
+
+        }
+
+    }
+
 
 
     }
+
+  
+
+
+
+
+    .detailsJob {
+      flex:7;
+      background-color: rgb(255, 255, 255);
+      height: 250px;
+      z-index: 1;
+      overflow:-moz-hidden-unscrollable;
+      scroll-behavior: none;
+      
+
+
+    }
+
+
+
+
+
+
+
+
 
 
 }

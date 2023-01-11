@@ -18,6 +18,7 @@ const initialState = {
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [devs, setDevs] = useState([]);
+  const [allJobs, setAllJobs] = useState([]);
 
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(state.user));
@@ -37,6 +38,8 @@ export const AppProvider = ({ children }) => {
 
   console.log(devs);
 
+
+
   return (
     <AppContext.Provider
       value={{
@@ -45,6 +48,7 @@ export const AppProvider = ({ children }) => {
         error: state.error,
         dispatch,
         devs,
+        allJobs
       }}>
       {children}
     </AppContext.Provider>

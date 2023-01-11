@@ -27,6 +27,17 @@ jobRoute.get("/", async(req, res) => {
 
 })
 
+// get one job
+jobRoute.get("/:id", async(req, res) => {
+    try {
+        const job = await Job.findById(req.params.id)
+        
+        res.status(200).json(job);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+})
+
 
 
 export default jobRoute
