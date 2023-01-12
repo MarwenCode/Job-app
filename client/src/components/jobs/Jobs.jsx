@@ -70,7 +70,7 @@ const Jobs = ({jobs}) => {
           ))}
       </div>
 
-      <ReactPaginate
+      {/* <ReactPaginate
         previousLabel={"Previous"}
         nextLabel={"Next"}
         pageCount={pageCount}
@@ -80,7 +80,7 @@ const Jobs = ({jobs}) => {
         nextLinkClassName={"nextBttn"}
         disabledClassName={"paginationDisabled"}
         activeClassName={"paginationActive"}
-      />
+      /> */}
     </div>
   );
 };

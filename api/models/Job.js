@@ -16,7 +16,7 @@ const JobSchema = new mongoose.Schema({
     },
     compagny: {
         type: String,
-        required: true, 
+       
      
     },
  

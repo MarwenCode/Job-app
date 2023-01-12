@@ -17,6 +17,7 @@ import "react-toastify/dist/ReactToastify.css";
 // import LoginClient from "./pages/loginClient/LoginClient";
 import "./app.scss";
 import FiltredJobs from "./components/filtredJobs/FiltredJobs";
+import CreateJobs from "./pages/createJobs/CreateJobs";
 
 function App() {
   const { user, dispatch } = useContext(AppContext);
@@ -36,6 +37,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login /> } />
               <Route path="/editProfile" element={<EditeProfile /> } />
+              <Route path="/admin/createjobs" element={<CreateJobs /> } />
              
 
         
