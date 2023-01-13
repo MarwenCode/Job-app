@@ -15,7 +15,8 @@ const Questions = () => {
   //fetch questions
   useEffect(() => {
     const getQuestions = async () => {
-      const res = await axios.get("/question");
+      const res = await axios.get("https://api-job-app.onrender.com/api/question");
+      // const res = await axios.get("/question");
       console.log(res);
       setQuestions(res.data.sort((p1, p2) => {
         return new Date(p2.createdAt) - new Date(p1.createdAt)
@@ -38,7 +39,8 @@ const Questions = () => {
     };
 
     try {
-      const res = axios.post("/question", newQuestion);
+      const res = axios.post("https://api-job-app.onrender.com/api/question", newQuestion);
+      // const res = axios.post("/question", newQuestion);
       setAskQuestion(res.data);
       console.log(res);
       window.location.replace("/forum");

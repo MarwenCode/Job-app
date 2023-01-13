@@ -19,7 +19,8 @@ const Login = () => {
         dispatch({type:"LOGIN_START"})
     
         try {
-            const res = await axios.post("/auth/login/dev", {
+            const res = await axios.post("https://api-job-app.onrender.com/api/auth/login/dev", {
+            // const res = await axios.post("/auth/login/dev", {
                 email,
                 password
             })

@@ -12,6 +12,7 @@ import answerRoute from "./routes/answers.js";
 import reviewRoute from "./routes/review.js";
 import jobRoute from "./routes/job.js";
 import { fileURLToPath } from "url";
+import cors from "cors"
 
 const app = express()
 dotenv.config()
@@ -57,7 +58,7 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 
 
 
-
+app.use(cors())
 
 
 app.use(express.json());

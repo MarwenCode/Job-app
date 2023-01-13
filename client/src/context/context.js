@@ -28,7 +28,8 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchDevs = async () => {
-      const res = await axios.get("/dev");
+      const res = await axios.get("https://api-job-app.onrender.com/api/dev");
+      // const res = await axios.get("/dev");
       console.log(res);
       setDevs(res.data);
     };

@@ -16,12 +16,13 @@ const Jobs = ({jobs}) => {
 
   const [pageNumber, setPageNumber] = useState(0);
 
-  const jobsPerPage = 5;
+  const jobsPerPage = 3;
   const currentPage = pageNumber * jobsPerPage;
 
   const pageCount = Math.ceil(jobs.length / jobsPerPage);
 
   const changePage = ({ selected }) => {
+    window.scrollTo(0, 0);
     setPageNumber(selected);
   };
 
@@ -63,14 +64,14 @@ const Jobs = ({jobs}) => {
       {/* <FilterBar onSearch={onSearch}  /> */}
 
       <div className="jobdetail">
-        {jobs &&
-          jobs.slice(currentPage, currentPage + jobsPerPage) &&
-          jobs.map((job, index) => (
+        {
+          jobs.slice(currentPage, currentPage + jobsPerPage)
+          .map((job, index) => (
             <Job job={job} key={index} />
           ))}
       </div>
 
-      {/* <ReactPaginate
+      <ReactPaginate
         previousLabel={"Previous"}
         nextLabel={"Next"}
         pageCount={pageCount}
@@ -80,7 +81,7 @@ const Jobs = ({jobs}) => {
         nextLinkClassName={"nextBttn"}
         disabledClassName={"paginationDisabled"}
         activeClassName={"paginationActive"}
-      /> */}
+      />
     </div>
   );
 };

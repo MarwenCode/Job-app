@@ -29,7 +29,8 @@ const Profile = () => {
 
   useEffect(() => {
     const getDev = async () => {
-      const res = await axios.get("/dev/" + path);
+      const res = await axios.get("https://api-job-app.onrender.com/api/dev/" + path);
+      // const res = await axios.get("/dev/" + path);
       // const res = await axios.get(`/review/${user._id}`);
       console.log(res.data);
       setDev(res.data);
@@ -67,7 +68,8 @@ const Profile = () => {
     };
 
     try {
-      const res = axios.post("/review/" + path, newReview);
+      const res = axios.post("https://api-job-app.onrender.com/api/review/" + path, newReview);
+      // const res = axios.post("/review/" + path, newReview);
       setReview(res.data);
       console.log(res);
       window.location.replace(`/dev/${dev._id}`);
@@ -86,7 +88,8 @@ const Profile = () => {
     console.log(reviewId);
 
     try {
-      await axios.delete(`/review/${reviewId}`, { data: { userId: user._id } });
+      await axios.delete(`https://api-job-app.onrender.com/api/review/${reviewId}`, { data: { userId: user._id } });
+      // await axios.delete(`/review/${reviewId}`, { data: { userId: user._id } });
 
       window.location.replace(`/dev/${dev._id}`);
     } catch (error) {

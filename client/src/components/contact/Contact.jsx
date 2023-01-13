@@ -19,7 +19,8 @@ const Contact = () => {
 
   useEffect(() => {
     const getDev = async () => {
-      const res = await axios.get("/dev/" + path);
+      const res = await axios.get("https://api-job-app.onrender.com/api/dev/" + path);
+      // const res = await axios.get("/dev/" + path);
       // const res = await axios.get(`/review/${user._id}`);
       console.log(res.data);
       setDev(res.data);

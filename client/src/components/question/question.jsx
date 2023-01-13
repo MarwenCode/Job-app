@@ -25,7 +25,8 @@ const Question = ({ question }) => {
   useEffect(() => {
     const getAnswers = async () => {
       //   const res = await axios.get("/answers/:id");
-      const res = await axios.get(`/answers/${question._id}`);
+      const res = await axios.get(`https://api-job-app.onrender.com/api/answers/${question._id}`);
+      // const res = await axios.get(`/answers/${question._id}`);
       console.log(res);
       setAnswer(res.data);
       // setAddAnswer(res.data.addAnswer);
@@ -50,7 +51,8 @@ const Question = ({ question }) => {
     };
 
     try {
-      const res = axios.post(`/answers/${question._id}`, newReply);
+      const res = axios.post(`https://api-job-app.onrender.com/api/answers/${question._id}`, newReply);
+      // const res = axios.post(`/answers/${question._id}`, newReply);
       setAddAnswer(res.data);
       console.log(res);
       setAnswerMode(false);
@@ -66,7 +68,8 @@ const Question = ({ question }) => {
   const deleteAnswer = async (answerId) => {
     console.log(answerId);
     try {
-      await axios.delete(`/answers/${answerId}`, {
+      await axios.delete(`https://api-job-app.onrender.com/api/answers/${answerId}`, {
+      // await axios.delete(`/answers/${answerId}`, {
         data: { userId: user._id },
       });
       window.location.replace("/forum");
@@ -79,7 +82,8 @@ const Question = ({ question }) => {
   const editRespond = async (answerId) => {
     console.log(answerId);
     try {
-      await axios.put(`/answers/${answerId}`, {
+      await axios.put(`https://api-job-app.onrender.com/api/answers/${answerId}`, {
+      // await axios.put(`/answers/${answerId}`, {
         questionId: question._id,
         username: user.username,
         answerId: answer._id,
@@ -98,7 +102,8 @@ const Question = ({ question }) => {
   const deleteQuestion = async (questionId) => {
     console.log(questionId);
     try {
-      await axios.delete(`/question/${questionId}`, {
+      await axios.delete(`https://api-job-app.onrender.com/api/question/${questionId}`, {
+      // await axios.delete(`/question/${questionId}`, {
         data: { userId: user._id },
       });
       window.location.replace("/forum");
@@ -111,7 +116,8 @@ const Question = ({ question }) => {
   const editeQuestion = async () => {
     try {
       if (question.username === user.username) {
-        await axios.put(`/question/${question._id}`, {
+        await axios.put(`https://api-job-app.onrender.com/api/question/${question._id}`, {
+        // await axios.put(`/question/${question._id}`, {
           userId: user._id,
           questionId: question._id,
           text: editQuestion,

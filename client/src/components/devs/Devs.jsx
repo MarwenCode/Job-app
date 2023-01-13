@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useContext } from "react";
 import Dev from "../dev/Dev";
+import { AppContext } from "../../context/context";
 import "./devs.scss";
 
 const Devs = ({ devs }) => {
+  const { user } = useContext(AppContext);
   const [selectedTech, setSelectedTech] = useState("");
   const radios = ["react", "python", "javaScript"];
   console.log(devs);
@@ -27,10 +30,15 @@ const Devs = ({ devs }) => {
         </div>
       ))}
 
-      {selectedTech && <button className="all" onClick={() => setSelectedTech("")}>All</button>}
+      {selectedTech && (
+        <button className="all" onClick={() => setSelectedTech("")}>
+          All
+        </button>
+      )}
 
       <div className="down">
         {devs
+          .filter((dev) => dev._id !== user._id)
           .filter((dev) => dev.technology.includes(selectedTech))
 
           .map((dev, index) => (

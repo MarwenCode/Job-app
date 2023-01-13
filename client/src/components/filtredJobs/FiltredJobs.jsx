@@ -10,7 +10,8 @@ const FiltredJobs = () => {
 
   useEffect(() => {
     const getJobs = async () => {
-      const res = await axios.get("/job");
+      const res = await axios.get("https://api-job-app.onrender.com/api/job");
+      // const res = await axios.get("/job");
       console.log(res);
       setJobs(res.data);
     };

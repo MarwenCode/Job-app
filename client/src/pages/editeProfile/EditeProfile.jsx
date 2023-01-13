@@ -34,7 +34,8 @@ const EditeProfile = () => {
     }
 
     try {
-      const res = await axios.put("/dev/" + user._id, updatedUser);
+      const res = await axios.put("https://api-job-app.onrender.com/api/dev/" + user._id, updatedUser);
+      // const res = await axios.put("/dev/" + user._id, updatedUser);
 
       console.log(res);
     } catch (error) {}

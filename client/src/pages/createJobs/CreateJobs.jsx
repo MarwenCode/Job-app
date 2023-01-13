@@ -26,8 +26,10 @@ const CreateJobs = () => {
 
     try {
 
-        const res = await axios.post("/job", addJob)
+        const res = await axios.post("https://api-job-app.onrender.com/api/job", addJob)
+        // const res = await axios.post("/job", addJob)
         console.log(res.data);
+        window.location.replace("/jobs");
         
     } catch (error) {
         console.log(error)
