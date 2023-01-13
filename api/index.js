@@ -71,6 +71,8 @@ app.use("/api/answers", answerRoute);
 app.use("/api/review", reviewRoute);
 app.use("/api/job", jobRoute);
 
+app.use(express.static(path.join(__dirname, "/client/build")));
+
 
 
 app.listen(8000, () => {

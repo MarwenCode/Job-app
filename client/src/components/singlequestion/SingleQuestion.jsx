@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { MdExpandMore } from "react-icons/md";
-import "./question.scss";
+import "./singlequestion.scss";
 import { AppContext } from "../../context/context";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
 const Question = ({ question }) => {
   const { user } = useContext(AppContext);
-  const profilepic = "http://localhost:8000/images/";
+//   const profilepic = "http://localhost:8000/images/";
   const [answer, setAnswer] = useState([]);
   const [addAnswer, setAddAnswer] = useState([]);
   const [editAnswer, setEditAnswer] = useState([]);
@@ -242,7 +242,7 @@ const Question = ({ question }) => {
       <div className="editAnswer">
         <div className="div" onClick={() => setAnswerMode((prev) => !prev)}>
           <button className="tite">
-            Add an answer <AiFillEdit className="addIcon" />
+            Add an answer <AiFillEdit className="addIcon"/>
           </button>
         </div>
 

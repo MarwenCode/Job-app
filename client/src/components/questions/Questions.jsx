@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "./questions.scss";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Question from "../question/Question";
+import SingleQuestion from "../singlequestion/SingleQuestion";
 import { AppContext } from "../../context/context";
 
 const Questions = () => {
@@ -79,7 +79,7 @@ const Questions = () => {
       </div>
 
       {questions.map((question, index) => (
-        <Question question={question} key={index} />
+        <SingleQuestion question={question} key={index} />
       ))}
     </div>
   );
